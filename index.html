@@ -77,10 +77,25 @@
             <h2>Consultas e Información</h2>
             <a name="Consultas e Información"></a>
             <h1>Consulta de personas en Proyecto</h1>
+            <input type="radio" id="minimoPersonas" name="minimo" value="minimo" checked>Mínimo 
+            <input type="radio" id="maximoPersonas" name="maximo" value="maximo">Máximo
+            <br>
+            <ol>
+                <li>Remodelación - Lider Florencia Corrado</li>
+            </ol>
+            <p id="pCantidadPersonas">Cantidad de personas: 2</p>
             <h1>Consulta de descripción</h1>
+            <label for="secuenciaConsultaDescripcion">Secuencia <input type="text" id="secuenciaConsultaDescripcion" placeholder="Secuencia"></label>
+            <input type="button" id="consultarDescripcion" value="Consultar">
             <h1>Generación de QR</h1>
+            <label for="seleccionEmpresa">Seleccione la empresa <select type="combo" name="SeleccionEmpresa">
+                <option>Antel</option>
+              </select>
+            <input type="button" id="generarQR" value="Generar Código QR">
+            <h3>QR</h3>
             <h1>Información de Empleados</h1>
             <h1>Información de área temática más frecuente</h1>
+            <p id="pTematicasFrecuentes">Temáticas 1 5</p> 
         </article>    
     </section>
     <footer>
