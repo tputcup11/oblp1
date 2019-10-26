@@ -24,8 +24,8 @@
 	text-decoration: none;
 }
 
-section{
-	padding-left: 2%;
+article{
+    padding-left: 1%;
 }
 
 footer {
@@ -40,4 +40,8 @@ footer {
 
 .li-verde{
     color: green;
+}
+
+.SeccionConFondo {
+    background-color: #F2F5FA;
 }
