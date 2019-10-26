@@ -9,7 +9,8 @@
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	background-color: #47648C;
+    background-color: #47648C;
+    padding-left: 25%;
 }
 .li-menu {
 	float: left;
