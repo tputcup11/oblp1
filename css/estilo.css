@@ -89,3 +89,6 @@ select{
       display: none !important;
     }
   }
+.radio{
+    height:auto;
+}
