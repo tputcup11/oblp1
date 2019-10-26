@@ -1,3 +1,16 @@
 nav ul li {
     display: inline;
 }
+.menu {
+    background-color: #EAE5EF;
+    padding:20px;
+ 
+}
+.li-menu a {
+    color: black;
+    margin-left:250px 
+  
+}
+.li-menu a:hover {
+	background-color: #B8B7B8;
+}
