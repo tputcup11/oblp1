@@ -42,6 +42,20 @@ footer {
     color: green;
 }
 
+.tabla-infoEmpleados{
+    border: 2px solid black;
+    margin-left: 25%;
+    width:50%
+}
+
+.td-nombre{
+    height: 50px;
+}
+
+.td-semaforo{
+    padding-left: 1%;
+}
+
 .SeccionConFondo {
     background-color: #F2F5FA;
 }
