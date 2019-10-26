@@ -73,3 +73,16 @@ footer {
 .Icono {
     width:2%;
 }
+<<<<<<< HEAD
+=======
+
+#tematicasFrecuentes {
+    font-weight: bold;
+}
+
+@media print{
+    .no-imprimir, .no-imprimir *{
+      display: none !important;
+    }
+  }
+>>>>>>> 5c3618d59b314677962b27ecb9a5730cc88b5d80
