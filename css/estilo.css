@@ -23,15 +23,21 @@
 	padding: 14px 16px;
 	text-decoration: none;
 }
+
 section{
 	padding-left: 2%;
-	
 }
+
 footer {
 	background-color: #47648C;
 	text-align: center;
 	color:white;
 }
+
 .li-menu a:hover {
 	background-color:#1F2058;
+}
+
+.li-verde{
+    color: green;
 }
