@@ -10,13 +10,15 @@
     <header>
         <!--Imágen de sofia-->
     </header>
-    <nav>
+
+    <nav class="no-imprimir">
 		<ul class="menu">
 		  <li class="li-menu"><a href="#Gestión de Clientes y Empleados">Gestión de Clientes y Empleados</a></li>
 		  <li class="li-menu"><a href="#Gestión de Proyectos y Asignaciones">Gestión de Proyectos y Asignaciones</a></li>
 		  <li class="li-menu"><a href="#Consultas e Información">Consultas e Información</a></li>
 		</ul>
-	</nav>
+    </nav>
+    
     <section>
         <article class="SeccionConFondo">
             <br>
@@ -50,13 +52,21 @@
             <label for="nombreRegistroProyecto"> Nombre <input type="text" id="nombreRegistroProyecto" maxlength="20" placeholder="Nombre"></label>
             <label for="descripcionRegistroProyecto"> Descripción <input type="text" id="descripcionRegistroProyecto" maxlength="20" placeholder="Descripción"></label>
             <label for="areaRegistroProyecto"> Área temática: <select type="combo" name="areaRegistroProyecto">
-                <option> 1- Big Data</option>
+                <option> 1 - Big Data</option>
+                <option> 2 - Machine learning</option>
+                <option> 3 - IoT</option>
+                <option> 4 - Data Analysis</option>
+                <option> 1 - Otros</option>
               </select>
             <label for="clienteRegistroProyecto"> Cliente: <select type="combo" name="clienteRegistroProyecto">
                 <option> ANTEL </option>
+                <option> UTE </option>
               </select>
             <label for="liderRegistroProyecto"> Líder: <select type="combo" name="liderRegistroProyecto">
                 <option>Florencia Conrado</option>
+                <option>Esteban Gris</option>
+                <option>Camila Fernández</option>
+                <option>Leandro Díaz</option>
               </select>
             <input class="btn" type="button" id="btnRegistrarProyecto" value="Registrar"> 
 
@@ -74,7 +84,8 @@
                 <option> Avanza </option>
               </select>
             <label for="empleadoEliminarProyecto"> Proyecto: <select type="combo" name="empleadoEliminarProyecto">
-                <option> Camila Fernández </option>
+                <option> Florencia Conrado </option>
+                <option> Esteban Gris </option>
               </select>
             <input class="btn" type="button" id="btnElimninarProyecto" value="Eliminar">
             <br>
@@ -99,7 +110,8 @@
             <input class="btn" type="button" id="consultarDescripcion" value="Consultar">
             <h1>Generación de QR</h1>
             <label for="seleccionEmpresa">Seleccione la empresa <select type="combo" name="SeleccionEmpresa">
-                <option>Antel</option>
+                <option>ANTEL</option>
+                <option>UTE</option>
               </select>
             <input class="btn" type="button" id="generarQR" value="Generar Código QR">
             <h3>QR</h3>
@@ -112,10 +124,11 @@
                 <tr><td class="td-nombre">Leandro Díaz</td><td>3100</td><td>1</td><td class="td-semaforo"><img src="img/semaforo.png"></td></tr>
             </table>
             <h1>Información de área temática más frecuente</h1>
-            <p id="pTematicasFrecuentes">Temáticas 1 5</p> 
+            <span id="tematicasFrecuentes">Temáticas 1 </span>5
             <br>
         </article>    
     </section>
+
     <footer>
         <p>Obligatorio de Programación 1 - Realizado por Sofía Otero (238824) y Manuel Garrido (251152)</p>
             <a href="https://facebook.com"><img class="Icono" src="img/facebook.png"></a>

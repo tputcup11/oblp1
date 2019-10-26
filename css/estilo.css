@@ -74,3 +74,12 @@ footer {
     width:2%;
 }
 
+#tematicasFrecuentes {
+    font-weight: bold;
+}
+
+@media print{
+    .no-imprimir, .no-imprimir *{
+      display: none !important;
+    }
+  }
