@@ -48,10 +48,39 @@
         <article>
             <h2>Gestión de Proyectos y Asignaciones</h2>
             <br>
+
             <h1>Registro de Proyecto</h1>
-            <!--comentario para romper-->
+            <label for="nombreRegistroProyecto"> Nombre <input type="text" id="nombreRegistroProyecto" maxlength="20" placeholder="Nombre"></label>
+            <label for="descripcionRegistroProyecto"> Descripción <input type="text" id="descripcionRegistroProyecto" maxlength="20" placeholder="Descripción"></label>
+            <label for="areaRegistroProyecto"> Área temática: <select type="combo" name="areaRegistroProyecto">
+                <option> 1- Big Data</option>
+              </select>
+            <label for="clienteRegistroProyecto"> Cliente: <select type="combo" name="clienteRegistroProyecto">
+                <option> ANTEL </option>
+              </select>
+            <label for="liderRegistroProyecto"> Líder: <select type="combo" name="liderRegistroProyecto">
+                <option>Florencia Conrado</option>
+              </select>
+            <input type="button" id="btnRegistrarProyecto" value="Registrar"> 
+
             <h1>Asignación de Empleados en Proyecto</h1>
+            <label for="proyectoAsignacionProyecto"> Proyecto: <select type="combo" name="proyectoAsignacionProyecto">
+                <option> Avanza </option>
+              </select>
+            <label for="empleadoAsignacionProyecto"> Proyecto: <select type="combo" name="empleadoAsignacionProyecto">
+                <option> Camila Fernández </option>
+              </select>
+              <input type="button" id="btnAsignarProyecto" value="Asignar">
+
             <h1>Eliminación de Empleados en Proyecto</h1>
+            <label for="proyectoEliminarProyecto"> Proyecto: <select type="combo" name="proyectoEliminarProyecto">
+                <option> Avanza </option>
+              </select>
+            <label for="empleadoEliminarProyecto"> Proyecto: <select type="combo" name="empleadoEliminarProyecto">
+                <option> Camila Fernández </option>
+              </select>
+            <input type="button" id="btnElimninarProyecto" value="Eliminar">
+
         </article>
         <article>
             <h2>Consultas e Información</h2>
