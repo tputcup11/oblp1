@@ -6,7 +6,7 @@
     font-family: "Helvetica", Times, serif
 
 }
-input , select{
+input{
     border-radius: 5px;
     height: 25px;
 }
@@ -47,7 +47,13 @@ footer {
     background-color:#1F2058;
     color: white;
 }
-
+.btn{
+    height: 30px;
+}
+select{
+    height: 30px;
+    border-radius: 5px;
+}
 .li-verde{
     color: green;
 }
@@ -73,8 +79,6 @@ footer {
 .Icono {
     width:2%;
 }
-<<<<<<< HEAD
-=======
 
 #tematicasFrecuentes {
     font-weight: bold;
@@ -85,4 +89,3 @@ footer {
       display: none !important;
     }
   }
->>>>>>> 5c3618d59b314677962b27ecb9a5730cc88b5d80
