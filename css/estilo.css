@@ -1,16 +1,36 @@
-nav ul li {
-    display: inline;
+*{
+    margin-left:0;
+    margin-right:0;
+	font-family: "Helvetica", Times, serif
 }
+
 .menu {
-    background-color: #EAE5EF;
-    padding:20px;
- 
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #47648C;
 }
+.li-menu {
+	float: left;
+}
+
 .li-menu a {
-    color: black;
-    margin-left:250px 
-  
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+section{
+	padding-left: 2%;
+	
+}
+footer {
+	background-color: #47648C;
+	text-align: center;
+	color:white;
 }
 .li-menu a:hover {
-	background-color: #B8B7B8;
+	background-color:#1F2058;
 }
