@@ -24,8 +24,8 @@
 	text-decoration: none;
 }
 
-section{
-	padding-left: 2%;
+article{
+    padding-left: 1%;
 }
 
 footer {
@@ -54,4 +54,8 @@ footer {
 
 .td-semaforo{
     padding-left: 1%;
+}
+
+.SeccionConFondo {
+    background-color: #F2F5FA;
 }
