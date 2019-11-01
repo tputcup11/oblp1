@@ -2,26 +2,57 @@
 
 *{
     margin-left:0;
+	margin-top:0;
     margin-right:0;
     font-family: "Helvetica", Times, serif
-
+}
+.banner{
+	height:120px;
+	background-color: #14274F;
+}
+#bannerinicio {
+	background-color: #075159;
+	width:35%;
+}
+.bannerf {
+	background-color: #075159;
+	width:35%;
+}
+h1 {
+    font-size: 1em;
+}
+h2 {
+    font-size: 0.9em;
+    padding-top: 20px;
+}
+h3 {
+    padding-top: 20px;
 }
 input{
     border-radius: 5px;
     height: 25px;
+}
+input:hover{
+    border-color: #075159;
 }
 .menu {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-    background-color: #47648C;
+    background-color: #077368;
     padding-left: 25%;
 }
 .li-menu {
 	float: left;
 }
-
+.tablabanner{
+	background-color: #075159;
+}
+header{
+	height: fit-content;
+	background-color: #075159;
+}
 .li-menu a {
 	display: block;
 	color: white;
@@ -35,16 +66,16 @@ article{
 }
 
 footer {
-	background-color: #47648C;
+	background-color: #077368;
 	text-align: center;
 	color:white;
 }
 
 .li-menu a:hover {
-	background-color:#1F2058;
+	background-color:#075159;
 }
 .btn:hover {
-    background-color:#1F2058;
+    background-color:#075159;
     color: white;
 }
 .btn{
@@ -53,6 +84,9 @@ footer {
 select{
     height: 30px;
     border-radius: 5px;
+}
+select:hover{
+	border-color:#075159;
 }
 .li-verde{
     color: green;
@@ -63,32 +97,30 @@ select{
     margin-left: 25%;
     width:50%
 }
-
 .td-nombre{
     height: 50px;
 }
-
-.td-semaforo{
-    padding-left: 1%;
+.semaforo{
+    width:55px;
 }
-
 .SeccionConFondo {
-    background-color: #F2F5FA;
+    background-color: #e5ffff;
 }
-
 .Icono {
     width:2%;
 }
-
 #tematicasFrecuentes {
     font-weight: bold;
 }
-
+.radio{
+    height:auto;
+}
+#li-verde-padding{
+    padding-top: 16px;
+}
+/* No mostrar menú en la impresión*/
 @media print{
     .no-imprimir, .no-imprimir *{
       display: none !important;
     }
   }
-.radio{
-    height:auto;
-}

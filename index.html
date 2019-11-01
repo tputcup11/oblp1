@@ -3,40 +3,53 @@
 <head>
     <!-- Obligatorio 1 realizado por: Sofía Otero (238824) y Manuel Garrido (251152) -->
     <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- compatibilidad mobile -->
     <title>Gestión de Proyectos</title>
     <link rel="stylesheet" href="css/estilo.css">
+	  <link rel="shortcut icon" href="img/icono.png"> <!-- Favicon -->
 </head>
 <body>
-    <header>
-        <!--Imágen de sofia-->
-    </header>
+<header>
+    <table class="tablabanner">
+			<tr>
+				<td id="bannerinicio"></td>
+				<td >
+					<img class="banner" src="img/banner.png" alt="Banner">
+				</td>
+				<td class="bannerf"></td>
+			</tr>
+		</table>
+   </header>
 
     <nav class="no-imprimir">
 		<ul class="menu">
-		  <li class="li-menu"><a href="#Gestión de Clientes y Empleados">Gestión de Clientes y Empleados</a></li>
-		  <li class="li-menu"><a href="#Gestión de Proyectos y Asignaciones">Gestión de Proyectos y Asignaciones</a></li>
-		  <li class="li-menu"><a href="#Consultas e Información">Consultas e Información</a></li>
+		  <li class="li-menu"><a href="#GestionClientesEmpleados">Gestión de Clientes y Empleados</a></li>
+		  <li class="li-menu"><a href="#GestionProyectosAsignaciones">Gestión de Proyectos y Asignaciones</a></li>
+		  <li class="li-menu"><a href="#ConsultasInformacion">Consultas e Información</a></li>
 		</ul>
     </nav>
     
     <section>
             <br>
+            <!-- GESTIÓN DE CLIENTES Y EMPLEADOS -->
         <article class="SeccionConFondo">
             <br>
-            <a name="Gestión de Clientes y Empleados"></a>
-            <h2>Gestión de Clientes y Empleados</h2>
-            <h1>Registro de Cliente</h1>
+            <a id="GestionClientesEmpleados"></a>
+            <h1>Gestión de Clientes y Empleados</h1>
+            <h2>Registro de Cliente</h2>
             <label for="nombreCliente">Nombre <input type="text" id="nombreCliente" maxlength="20" placeholder="Nombre"></label>
             <label for="telefonoCliente">Teléfono <input type="text" id="telefonoCliente" maxlength="20" placeholder="Teléfono"></label>
             <label for="correoCliente">Correo <input type="text" id="correoCliente" placeholder="Correo"></label>
             <label for="webCliente">Web <input type="text" id="webCliente" placeholder="Web"></label>
             <input class="btn" type="button" id="registroCliente" value="Registrar">
-            <h1>Clientes Registrados</h1>
+            
+            <h2>Clientes Registrados</h2>
             <ol>
-                <li class="li-verde">ANTEL - <a href="https://antel.com.uy">www.antel.com.uy</a></li>
-                <li class="li-verde">UTE - <a href="https://ute.com.uy">www.ute.com.uy</a></li>
+                <li class="li-verde">ANTEL - <a href="https://antel.com.uy" target="_blank">www.antel.com.uy</a></li>
+                <li class="li-verde">UTE - <a href="https://ute.com.uy" target="_blank">www.ute.com.uy</a></li>
             </ol>
-            <h1>Registro de Empleado</h1>
+            
+            <h2>Registro de Empleado</h2>
             <label for="nombreEmpleado">Nombre <input type="text" id="nombreEmpleado" maxlength="20" placeholder="Nombre"></label>
             <label for="telefonoEmpleado">Teléfono <input type="text" id="telefonoEmpleado" maxlength="20" placeholder="Teléfono"></label>
             <label for="salarioEmpleado">Salario <input type="text" id="salarioEmpleado" maxlength="20" placeholder="Salario"></label>
@@ -44,12 +57,12 @@
             <br>
             <br>
         </article>
-    
+            <!-- GESTIÓN DE PROYECTOS Y ASIGNACIONES -->
         <article>
             <br>
-            <a name="Gestión de Proyectos y Asignaciones"></a>
-            <h2>Gestión de Proyectos y Asignaciones</h2>
-            <h1>Registro de Proyecto</h1>
+            <a id="GestionProyectosAsignaciones"></a>
+            <h1>Gestión de Proyectos y Asignaciones</h1>
+            <h2>Registro de Proyecto</h2>
             <label for="nombreRegistroProyecto"> Nombre <input type="text" id="nombreRegistroProyecto" maxlength="20" placeholder="Nombre"></label>
             <label for="descripcionRegistroProyecto"> Descripción <input type="text" id="descripcionRegistroProyecto" maxlength="20" placeholder="Descripción"></label>
             <label for="areaRegistroProyecto"> Área temática: <select type="combo" name="areaRegistroProyecto">
@@ -70,8 +83,8 @@
                 <option>Leandro Díaz</option>
               </select>
             <input class="btn" type="button" id="btnRegistrarProyecto" value="Registrar"> 
-
-            <h1>Asignación de Empleados en Proyecto</h1>
+            
+            <h2>Asignación de Empleados en Proyecto</h2>
             <label for="proyectoAsignacionProyecto"> Proyecto: <select type="combo" name="proyectoAsignacionProyecto">
                 <option> Avanza </option>
               </select>
@@ -79,8 +92,8 @@
                 <option> Camila Fernández </option>
               </select>
               <input class="btn" type="button" id="btnAsignarProyecto" value="Asignar">
-
-            <h1>Eliminación de Empleados en Proyecto</h1>
+              
+            <h2>Eliminación de Empleados en Proyecto</h2>
             <label for="proyectoEliminarProyecto"> Proyecto: <select type="combo" name="proyectoEliminarProyecto">
                 <option> Avanza </option>
               </select>
@@ -92,12 +105,12 @@
             <br>
             <br>
         </article>
-        
+            <!-- CONSULTAS E INFORMACIÓN -->
         <article class="SeccionConFondo">
             <br>
-            <a name="Consultas e Información"></a>
-            <h2>Consultas e Información</h2>
-            <h1>Consulta de personas en Proyecto</h1>
+            <a id="ConsultasInformacion"></a>
+            <h1>Consultas e Información</h1>
+            <h2>Consulta de personas en Proyecto</h2>
             <form>
                 <label for="maxmin"></label>
                 Mínimo
@@ -106,40 +119,46 @@
                 <input class="radio" type="radio" name="maxmin" value="maximoPersona"> 
              </form>
             <ol>
-                <li class="li-verde">Remodelación - Lider Florencia Corrado</li>
+                <li class="li-verde" id="li-verde-padding">Remodelación - Lider Florencia Corrado</li>
             </ol>
             <p id="pCantidadPersonas">Cantidad de personas: 2</p>
-            <h1>Consulta de descripción</h1>
+            
+            <h2>Consulta de descripción</h2>
             <label for="secuenciaConsultaDescripcion">Secuencia <input type="text" id="secuenciaConsultaDescripcion" placeholder="Secuencia"></label>
             <input class="btn" type="button" id="consultarDescripcion" value="Consultar">
-            <h1>Generación de QR</h1>
+            
+            <h2>Generación de QR</h2>
             <label for="seleccionEmpresa">Seleccione la empresa</label><select type="combo" name="SeleccionEmpresa">
                 <option>ANTEL</option>
                 <option>UTE</option>
               </select>
             <input class="btn" type="button" id="generarQR" value="Generar Código QR">
-            <h3>QR</h3>
-            <h1>Información de Empleados</h1>
+            
+            <h1>QR</h1>
+
+            <h2>Información de Empleados</h2>
             <table class="tabla-infoEmpleados">
                 <th>
                 <tr><td>Nombre</td><td>Salario</td><td>Cantidad</td><td>Estado</td></tr>
                 </th>
-                <tr><td class="td-nombre">Florencia Conrado</td><td>4100</td><td >2</td><td class="td-semaforo"><img src="img/semaforo.png"></td></tr>
-                <tr><td class="td-nombre">Esteban Gris</td><td>3800</td><td >1</td><td class="td-semaforo"><img src="img/semaforo.png"></td></tr>
-                <tr><td class="td-nombre">Camila Fernandez</td><td>3400</td><td >1</td><td class="td-semaforo"><img src="img/semaforo.png"></td></tr>
-                <tr><td class="td-nombre">Leandro Díaz</td><td>3100</td><td >1</td><td class="td-semaforo"><img src="img/semaforo.png"></td></tr>
+                <tr><td class="td-nombre">Florencia Conrado</td><td>4100</td><td >2</td><td class="td-semaforo"><img class="semaforo" src="img/semaforoverde.png"></td></tr>
+                <tr><td class="td-nombre">Esteban Gris</td><td>3800</td><td >1</td><td class="td-semaforo"><img img class="semaforo" src="img/semaforoverde.png"></td></tr>
+                <tr><td class="td-nombre">Camila Fernandez</td><td>3400</td><td >1</td><td class="td-semaforo"><img img class="semaforo" src="img/semaforoverde.png"></td></tr>
+                <tr><td class="td-nombre">Leandro Díaz</td><td>3100</td><td >1</td><td class="td-semaforo"><img img class="semaforo" src="img/semaforoverde.png"></td></tr>
             </table>
-            <h1>Información de área temática más frecuente</h1>
+            <br>
+            <h2>Información de área temática más frecuente</h2>
             <span id="tematicasFrecuentes">Temáticas 1 </span>5
+            <br>
             <br>
         </article>    
     </section>
 
     <footer>
         <p>Obligatorio de Programación 1 - Realizado por Sofía Otero (238824) y Manuel Garrido (251152)</p>
-            <a href="https://facebook.com"><img class="Icono" src="img/facebook.png"></a>
-            <a href="https://twitter.com"><img class="Icono" src="img/twitter.png"></a>
-            <a href="https://linkedin.com"><img class="Icono" src="img/linkedin.png"></a>
+            <a href="https://facebook.com" target="_blank"><img class="Icono" src="img/facebook.png"></a>
+            <a href="https://twitter.com" target="_blank"><img class="Icono" src="img/twitter.png"></a>
+            <a href="https://linkedin.com" target="_blank"><img class="Icono" src="img/linkedin.png"></a>
     </footer>
 </body>
 </html>
