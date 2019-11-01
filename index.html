@@ -3,37 +3,36 @@
 <head>
     <!-- Obligatorio 1 realizado por: Sofía Otero (238824) y Manuel Garrido (251152) -->
     <meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- compatibilidad mobile -->
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Compatibilidad Mobile -->
     <title>Gestión de Proyectos</title>
     <link rel="stylesheet" href="css/estilo.css">
 	  <link rel="shortcut icon" href="img/icono.png"> <!-- Favicon -->
 </head>
 <body>
-<header>
+
+  <header>
     <table class="tablabanner">
 			<tr>
 				<td id="bannerinicio"></td>
-				<td >
-					<img class="banner" src="img/banner.png" alt="Banner">
-				</td>
+				<td><img class="banner" src="img/banner.png" alt="Banner"></td>
 				<td class="bannerf"></td>
 			</tr>
 		</table>
-   </header>
+  </header>
 
     <nav class="no-imprimir">
-		<ul class="menu">
-		  <li class="li-menu"><a href="#GestionClientesEmpleados">Gestión de Clientes y Empleados</a></li>
-		  <li class="li-menu"><a href="#GestionProyectosAsignaciones">Gestión de Proyectos y Asignaciones</a></li>
-		  <li class="li-menu"><a href="#ConsultasInformacion">Consultas e Información</a></li>
-		</ul>
+		  <ul class="menu">
+		    <li class="li-menu"><a href="#GestionClientesEmpleados">Gestión de Clientes y Empleados</a></li>
+		    <li class="li-menu"><a href="#GestionProyectosAsignaciones">Gestión de Proyectos y Asignaciones</a></li>
+		    <li class="li-menu"><a href="#ConsultasInformacion">Consultas e Información</a></li>
+		  </ul>
     </nav>
     
     <section>
-            <br>
-            <!-- GESTIÓN DE CLIENTES Y EMPLEADOS -->
+        <br>
+        <!-- GESTIÓN DE CLIENTES Y EMPLEADOS -->
         <article class="SeccionConFondo">
-            <br>
+          <br>
             <a id="GestionClientesEmpleados"></a>
             <h1>Gestión de Clientes y Empleados</h1>
             <h2>Registro de Cliente</h2>
@@ -65,42 +64,42 @@
             <h2>Registro de Proyecto</h2>
             <label for="nombreRegistroProyecto"> Nombre <input type="text" id="nombreRegistroProyecto" maxlength="20" placeholder="Nombre"></label>
             <label for="descripcionRegistroProyecto"> Descripción <input type="text" id="descripcionRegistroProyecto" maxlength="20" placeholder="Descripción"></label>
-            <label for="areaRegistroProyecto"> Área temática: <select type="combo" name="areaRegistroProyecto">
+            <label for="areaRegistroProyecto"> Área temática: <select id="areaRegistroProyecto">
                 <option> 1 - Big Data</option>
                 <option> 2 - Machine learning</option>
                 <option> 3 - IoT</option>
                 <option> 4 - Data Analysis</option>
                 <option> 1 - Otros</option>
-              </select>
-            <label for="clienteRegistroProyecto"> Cliente: <select type="combo" name="clienteRegistroProyecto">
+              </select></label>
+            <label for="clienteRegistroProyecto"> Cliente: <select id="clienteRegistroProyecto">
                 <option> ANTEL </option>
                 <option> UTE </option>
-              </select>
-            <label for="liderRegistroProyecto"> Líder: <select type="combo" name="liderRegistroProyecto">
+              </select></label>
+            <label for="liderRegistroProyecto"> Líder: <select  id="liderRegistroProyecto">
                 <option>Florencia Conrado</option>
                 <option>Esteban Gris</option>
                 <option>Camila Fernández</option>
                 <option>Leandro Díaz</option>
-              </select>
+              </select></label>
             <input class="btn" type="button" id="btnRegistrarProyecto" value="Registrar"> 
             
             <h2>Asignación de Empleados en Proyecto</h2>
-            <label for="proyectoAsignacionProyecto"> Proyecto: <select type="combo" name="proyectoAsignacionProyecto">
+            <label for="proyectoAsignacionProyecto"> Proyecto: <select id="proyectoAsignacionProyecto">
                 <option> Avanza </option>
-              </select>
-            <label for="empleadoAsignacionProyecto"> Proyecto: <select type="combo" name="empleadoAsignacionProyecto">
+              </select></label>
+            <label for="empleadoAsignacionProyecto"> Proyecto: <select id="empleadoAsignacionProyecto">
                 <option> Camila Fernández </option>
-              </select>
-              <input class="btn" type="button" id="btnAsignarProyecto" value="Asignar">
+              </select></label>
+            <input class="btn" type="button" id="btnAsignarProyecto" value="Asignar">
               
             <h2>Eliminación de Empleados en Proyecto</h2>
-            <label for="proyectoEliminarProyecto"> Proyecto: <select type="combo" name="proyectoEliminarProyecto">
+            <label for="proyectoEliminarProyecto"> Proyecto: <select id="proyectoEliminarProyecto">
                 <option> Avanza </option>
-              </select>
-            <label for="empleadoEliminarProyecto"> Proyecto: <select type="combo" name="empleadoEliminarProyecto">
+              </select></label>
+            <label for="empleadoEliminarProyecto"> Proyecto: <select id="empleadoEliminarProyecto">
                 <option> Florencia Conrado </option>
                 <option> Esteban Gris </option>
-              </select>
+              </select></label>
             <input class="btn" type="button" id="btnElimninarProyecto" value="Eliminar">
             <br>
             <br>
@@ -112,11 +111,10 @@
             <h1>Consultas e Información</h1>
             <h2>Consulta de personas en Proyecto</h2>
             <form>
-                <label for="maxmin"></label>
-                Mínimo
-                <input class="radio" type="radio" name="maxmin" value="minimoPersona" checked=Minimo> 
-                Máximo
-                <input class="radio" type="radio" name="maxmin" value="maximoPersona"> 
+                  Mínimo
+                  <input class="radio" type="radio" name="maxmin" value="minimoPersona" checked> 
+                  Máximo
+                  <input class="radio" type="radio" name="maxmin" value="maximoPersona">
              </form>
             <ol>
                 <li class="li-verde" id="li-verde-padding">Remodelación - Lider Florencia Corrado</li>
@@ -128,23 +126,21 @@
             <input class="btn" type="button" id="consultarDescripcion" value="Consultar">
             
             <h2>Generación de QR</h2>
-            <label for="seleccionEmpresa">Seleccione la empresa</label><select type="combo" name="SeleccionEmpresa">
+            <label for="SeleccionEmpresa">Seleccione la empresa<select id="SeleccionEmpresa">
                 <option>ANTEL</option>
                 <option>UTE</option>
-              </select>
+              </select></label>
             <input class="btn" type="button" id="generarQR" value="Generar Código QR">
             
             <h1>QR</h1>
 
             <h2>Información de Empleados</h2>
             <table class="tabla-infoEmpleados">
-                <th>
                 <tr><td>Nombre</td><td>Salario</td><td>Cantidad</td><td>Estado</td></tr>
-                </th>
-                <tr><td class="td-nombre">Florencia Conrado</td><td>4100</td><td >2</td><td class="td-semaforo"><img class="semaforo" src="img/semaforoverde.png"></td></tr>
-                <tr><td class="td-nombre">Esteban Gris</td><td>3800</td><td >1</td><td class="td-semaforo"><img img class="semaforo" src="img/semaforoverde.png"></td></tr>
-                <tr><td class="td-nombre">Camila Fernandez</td><td>3400</td><td >1</td><td class="td-semaforo"><img img class="semaforo" src="img/semaforoverde.png"></td></tr>
-                <tr><td class="td-nombre">Leandro Díaz</td><td>3100</td><td >1</td><td class="td-semaforo"><img img class="semaforo" src="img/semaforoverde.png"></td></tr>
+                <tr><td class="td-nombre">Florencia Conrado</td><td>4100</td><td >2</td><td class="td-semaforo"><img class="semaforo" src="img/semaforoverde.png" alt="Semáforo Verde"></td></tr>
+                <tr><td class="td-nombre">Esteban Gris</td><td>3800</td><td >1</td><td class="td-semaforo"><img class="semaforo" src="img/semaforoverde.png" alt="Semáforo Verde"></td></tr>
+                <tr><td class="td-nombre">Camila Fernandez</td><td>3400</td><td >1</td><td class="td-semaforo"><img class="semaforo" src="img/semaforoverde.png" alt="Semáforo Verde"></td></tr>
+                <tr><td class="td-nombre">Leandro Díaz</td><td>3100</td><td >1</td><td class="td-semaforo"><img class="semaforo" src="img/semaforoverde.png" alt="Semáforo Verde"></td></tr>
             </table>
             <br>
             <h2>Información de área temática más frecuente</h2>
@@ -156,9 +152,9 @@
 
     <footer>
         <p>Obligatorio de Programación 1 - Realizado por Sofía Otero (238824) y Manuel Garrido (251152)</p>
-            <a href="https://facebook.com" target="_blank"><img class="Icono" src="img/facebook.png"></a>
-            <a href="https://twitter.com" target="_blank"><img class="Icono" src="img/twitter.png"></a>
-            <a href="https://linkedin.com" target="_blank"><img class="Icono" src="img/linkedin.png"></a>
+            <a href="https://facebook.com" target="_blank"><img class="Icono" src="img/facebook.png" alt="Facebook"></a>
+            <a href="https://twitter.com" target="_blank"><img class="Icono" src="img/twitter.png" alt="Twitter"></a>
+            <a href="https://linkedin.com" target="_blank"><img class="Icono" src="img/linkedin.png" alt="Linkedin"></a>
     </footer>
 </body>
 </html>
