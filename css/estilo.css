@@ -1,10 +1,28 @@
 /*  Obligatorio 1 realizado por: Sofía Otero (238824) y Manuel Garrido (251152) */
 
+/* General */
 *{
     margin-left:0;
 	margin-top:0;
     margin-right:0;
     font-family: "Helvetica", Times, serif
+}
+h4 {
+    padding-top: 20px;
+}
+article{
+    padding-left: 1%;
+}
+footer {
+	background-color: #077368;
+	text-align: center;
+	color:white;
+}
+
+/* Header */
+header{
+	height: fit-content;
+	background-color: #075159;
 }
 .banner{
 	height:120px;
@@ -18,23 +36,11 @@
 	background-color: #075159;
 	width:35%;
 }
-h1 {
-    font-size: 1em;
+.tablabanner{
+	background-color: #075159;
 }
-h2 {
-    font-size: 0.9em;
-    padding-top: 20px;
-}
-h3 {
-    padding-top: 20px;
-}
-input{
-    border-radius: 5px;
-    height: 25px;
-}
-input:hover{
-    border-color: #075159;
-}
+
+/* Menú */
 .menu {
 	list-style-type: none;
 	margin: 0;
@@ -46,13 +52,6 @@ input:hover{
 .li-menu {
 	float: left;
 }
-.tablabanner{
-	background-color: #075159;
-}
-header{
-	height: fit-content;
-	background-color: #075159;
-}
 .li-menu a {
 	display: block;
 	color: white;
@@ -60,19 +59,17 @@ header{
 	padding: 14px 16px;
 	text-decoration: none;
 }
-
-article{
-    padding-left: 1%;
-}
-
-footer {
-	background-color: #077368;
-	text-align: center;
-	color:white;
-}
-
 .li-menu a:hover {
 	background-color:#075159;
+}
+
+/* Input - Buttons Hover */
+input{
+    border-radius: 5px;
+    height: 25px;
+}
+input:hover{
+    border-color: #075159;
 }
 .btn:hover {
     background-color:#075159;
@@ -88,10 +85,14 @@ select{
 select:hover{
 	border-color:#075159;
 }
+
+/* Listas - Tablas */
 .li-verde{
     color: green;
 }
-
+#li-verde-padding{
+    padding-top: 16px;
+}
 .tabla-infoEmpleados{
     border: 2px solid black;
     margin-left: 25%;
@@ -100,24 +101,26 @@ select:hover{
 .td-nombre{
     height: 50px;
 }
+
+/* Imágenes */
 .semaforo{
     width:55px;
-}
-.SeccionConFondo {
-    background-color: #e5ffff;
 }
 .Icono {
     width:2%;
 }
+
+/* Otros */
 #tematicasFrecuentes {
     font-weight: bold;
+}
+.SeccionConFondo {
+    background-color: #e5ffff;
 }
 .radio{
     height:auto;
 }
-#li-verde-padding{
-    padding-top: 16px;
-}
+
 /* No mostrar menú en la impresión*/
 @media print{
     .no-imprimir, .no-imprimir *{
