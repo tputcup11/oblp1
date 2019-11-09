@@ -6,7 +6,9 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Compatibilidad Mobile -->
     <title>Gestión de Proyectos</title>
     <link rel="stylesheet" href="css/estilos.css">
-	  <link rel="shortcut icon" href="img/icono.png"> <!-- Favicon -->
+    <link rel="shortcut icon" href="img/icono.png"> <!-- Favicon -->
+    <script src="js/clases.js"></script>
+    <script src="js/funciones.js"></script>
 </head>
 <body>
 
@@ -40,7 +42,7 @@
             <label for="telefonoCliente">Teléfono <input type="text" id="telefonoCliente" maxlength="20" placeholder="Teléfono"></label>
             <label for="correoCliente">Correo <input type="text" id="correoCliente" placeholder="Correo"></label>
             <label for="webCliente">Web <input type="text" id="webCliente" placeholder="Web"></label>
-            <input class="btn" type="button" id="registroCliente" value="Registrar">
+            <input class="btn" type="button" id="btnRegistrarCliente" value="Registrar">
             
             <h4>Clientes Registrados</h4>
             <ol>
@@ -52,7 +54,7 @@
             <label for="nombreEmpleado">Nombre <input type="text" id="nombreEmpleado" maxlength="20" placeholder="Nombre"></label>
             <label for="telefonoEmpleado">Teléfono <input type="text" id="telefonoEmpleado" maxlength="20" placeholder="Teléfono"></label>
             <label for="salarioEmpleado">Salario <input type="text" id="salarioEmpleado" maxlength="20" placeholder="Salario"></label>
-            <input class="btn" type="button" id="registroEmpleado" value="Registrar">
+            <input class="btn" type="button" id="btnRegistrarEmpleado" value="Registrar">
             <br>
             <br>
         </article>
@@ -102,7 +104,7 @@
                 <option> Florencia Conrado </option>
                 <option> Esteban Gris </option>
               </select></label>
-            <input class="btn" type="button" id="btnElimninarProyecto" value="Eliminar">
+            <input class="btn" type="button" id="btnEliminarProyecto" value="Eliminar">
             <br>
             <br>
         </article>
@@ -126,14 +128,14 @@
             
             <h4>Consulta de descripción</h4>
             <label for="secuenciaConsultaDescripcion">Secuencia <input type="text" id="secuenciaConsultaDescripcion" placeholder="Secuencia"></label>
-            <input class="btn" type="button" id="consultarDescripcion" value="Consultar">
+            <input class="btn" type="button" id="btnConsultarDescripcion" value="Consultar">
             
             <h4>Generación de QR</h4>
             <label for="SeleccionEmpresa">Seleccione la empresa<select id="SeleccionEmpresa">
                 <option>ANTEL</option>
                 <option>UTE</option>
               </select></label>
-            <input class="btn" type="button" id="generarQR" value="Generar Código QR">
+            <input class="btn" type="button" id="btnGenerarQR" value="Generar Código QR">
             
             <h3>QR</h3>
 
