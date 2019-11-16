@@ -30,6 +30,10 @@ class Proyecto{
         this.lider = lider;
         this.empleadosAsignados = [];
     }
+
+    asignarEmpleado(empleado){
+        this.empleadosAsignados.push(empleado);
+    }
 }
 
 class Sistema{
