@@ -87,7 +87,7 @@ select:hover{
 }
 
 /* Listas - Tablas */
-.li-verde{
+ol {
     color: green;
 }
 #li-verde-padding{

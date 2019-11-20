@@ -38,23 +38,23 @@
             <a id="GestionClientesEmpleados"></a>
             <h3>Gestión de Clientes y Empleados</h3>
             <h4>Registro de Cliente</h4>
-            <label for="nombreCliente">Nombre <input type="text" id="nombreCliente" maxlength="20" placeholder="Nombre"></label>
-            <label for="telefonoCliente">Teléfono <input type="text" id="telefonoCliente" maxlength="20" placeholder="Teléfono"></label>
-            <label for="correoCliente">Correo <input type="text" id="correoCliente" placeholder="Correo"></label>
-            <label for="webCliente">Web <input type="text" id="webCliente" placeholder="Web"></label>
-            <input class="btn" type="button" id="btnRegistrarCliente" value="Registrar">
-            
+            <form id="formCliente">
+              <label for="nombreCliente">Nombre <input type="text" id="nombreCliente" maxlength="20" placeholder="Nombre"></label>
+              <label for="telefonoCliente">Teléfono <input type="text" id="telefonoCliente" maxlength="20" placeholder="Teléfono"></label>
+              <label for="correoCliente">Correo <input type="text" id="correoCliente" placeholder="Correo"></label>
+              <label for="webCliente">Web <input type="text" id="webCliente" placeholder="Web"></label>
+              <input class="btn" type="button" id="btnRegistrarCliente" value="Registrar">
+            </form>
             <h4>Clientes Registrados</h4>
-            <ol>
-                <li class="li-verde">ANTEL - <a href="https://antel.com.uy" target="_blank">www.antel.com.uy</a></li>
-                <li class="li-verde">UTE - <a href="https://ute.com.uy" target="_blank">www.ute.com.uy</a></li>
-            </ol>
-            
+            <ol id="liClientes"></ol>
+      
             <h4>Registro de Empleado</h4>
-            <label for="nombreEmpleado">Nombre <input type="text" id="nombreEmpleado" maxlength="20" placeholder="Nombre"></label>
-            <label for="telefonoEmpleado">Teléfono <input type="text" id="telefonoEmpleado" maxlength="20" placeholder="Teléfono"></label>
-            <label for="salarioEmpleado">Salario <input type="text" id="salarioEmpleado" maxlength="20" placeholder="Salario"></label>
-            <input class="btn" type="button" id="btnRegistrarEmpleado" value="Registrar">
+            <form id="formEmpleado">
+              <label for="nombreEmpleado">Nombre <input type="text" id="nombreEmpleado" maxlength="20" placeholder="Nombre"></label>
+              <label for="telefonoEmpleado">Teléfono <input type="text" id="telefonoEmpleado" maxlength="20" placeholder="Teléfono"></label>
+              <label for="salarioEmpleado">Salario <input type="text" id="salarioEmpleado" maxlength="20" placeholder="Salario"></label>
+              <input class="btn" type="button" id="btnRegistrarEmpleado" value="Registrar">
+            </form>
             <br>
             <br>
         </article>
@@ -66,45 +66,46 @@
             <h3>Gestión de Proyectos y Asignaciones</h3>
       
             <h4>Registro de Proyecto</h4>
-            <label for="nombreRegistroProyecto"> Nombre <input type="text" id="nombreRegistroProyecto" maxlength="15" placeholder="Nombre"></label>
-            <label for="descripcionRegistroProyecto"> Descripción <input type="text" id="descripcionRegistroProyecto" maxlength="35" placeholder="Descripción"></label>
-            <label for="areaRegistroProyecto"> Área temática: <select id="areaRegistroProyecto">
-                <option> 1 - Big Data</option>
-                <option> 2 - Machine learning</option>
-                <option> 3 - IoT</option>
-                <option> 4 - Data Analysis</option>
-                <option> 1 - Otros</option>
-              </select></label>
-            <label for="clienteRegistroProyecto"> Cliente: <select id="clienteRegistroProyecto">
-                <option> ANTEL </option>
-                <option> UTE </option>
-              </select></label>
-            <label for="liderRegistroProyecto"> Líder: <select  id="liderRegistroProyecto">
-                <option>Florencia Conrado</option>
-                <option>Esteban Gris</option>
-                <option>Camila Fernández</option>
-                <option>Leandro Díaz</option>
-              </select></label>
-            <input class="btn" type="button" id="btnRegistrarProyecto" value="Registrar"> 
-            
+            <form id="formProyecto">
+              <label for="nombreRegistroProyecto"> Nombre <input type="text" id="nombreRegistroProyecto" maxlength="15" placeholder="Nombre"></label>
+              <label for="descripcionRegistroProyecto"> Descripción <input type="text" id="descripcionRegistroProyecto" maxlength="35" placeholder="Descripción"></label>
+              <label for="areaRegistroProyecto"> Área temática: <select id="areaRegistroProyecto">
+                  <option> 1 - Big Data</option>
+                  <option> 2 - Machine learning</option>
+                  <option> 3 - IoT</option>
+                  <option> 4 - Data Analysis</option>
+                  <option> 1 - Otros</option>
+                </select></label>
+              <label for="clienteRegistroProyecto"> Cliente: <select id="clienteRegistroProyecto"></select></label>
+              <label for="liderRegistroProyecto"> Líder: <select  id="liderRegistroProyecto">
+                  <option>Florencia Conrado</option>
+                  <option>Esteban Gris</option>
+                  <option>Camila Fernández</option>
+                  <option>Leandro Díaz</option>
+                </select></label>
+              <input class="btn" type="button" id="btnRegistrarProyecto" value="Registrar"> 
+            </form>
             <h4>Asignación de Empleados en Proyecto</h4>
-            <label for="proyectoAsignacionProyecto"> Proyecto: <select id="proyectoAsignacionProyecto">
-                <option> Avanza </option>
-              </select></label>
-            <label for="empleadoAsignacionProyecto"> Proyecto: <select id="empleadoAsignacionProyecto">
-                <option> Camila Fernández </option>
-              </select></label>
-            <input class="btn" type="button" id="btnAsignarProyecto" value="Asignar">
-              
+            <form id="formAsignarProyecto">
+              <label for="proyectoAsignacionProyecto"> Proyecto: <select id="proyectoAsignacionProyecto">
+                  <option> Avanza </option>
+                </select></label>
+              <label for="empleadoAsignacionProyecto"> Proyecto: <select id="empleadoAsignacionProyecto">
+                  <option> Camila Fernández </option>
+                </select></label>
+              <input class="btn" type="button" id="btnAsignarProyecto" value="Asignar">
+            </form>  
             <h4>Eliminación de Empleados en Proyecto</h4>
-            <label for="proyectoEliminarProyecto"> Proyecto: <select id="proyectoEliminarProyecto">
-                <option> Avanza </option>
-              </select></label>
-            <label for="empleadoEliminarProyecto"> Proyecto: <select id="empleadoEliminarProyecto">
-                <option> Florencia Conrado </option>
-                <option> Esteban Gris </option>
-              </select></label>
-            <input class="btn" type="button" id="btnEliminarProyecto" value="Eliminar">
+            <form id="formEliminarProyecto">
+              <label for="proyectoEliminarProyecto"> Proyecto: <select id="proyectoEliminarProyecto">
+                  <option> Avanza </option>
+                </select></label>
+              <label for="empleadoEliminarProyecto"> Proyecto: <select id="empleadoEliminarProyecto">
+                  <option> Florencia Conrado </option>
+                  <option> Esteban Gris </option>
+                </select></label>
+              <input class="btn" type="button" id="btnEliminarProyecto" value="Eliminar">
+            </form>
             <br>
             <br>
         </article>
@@ -116,25 +117,23 @@
             <h3>Consultas e Información</h3>
             <h4>Consulta de personas en Proyecto</h4>
             <form>
-                  Mínimo
-                  <input class="radio" type="radio" name="maxmin" value="minimoPersona" checked> 
-                  Máximo
-                  <input class="radio" type="radio" name="maxmin" value="maximoPersona">
+              Mínimo
+              <input class="radio" type="radio" name="maxmin" value="minimoPersona" checked> 
+              Máximo
+              <input class="radio" type="radio" name="maxmin" value="maximoPersona">
              </form>
             <ol>
-                <li class="li-verde" id="li-verde-padding">Remodelación - Lider Florencia Corrado</li>
+                <!-- <li class="li-verde" id="li-verde-padding">Remodelación - Lider Florencia Corrado</li> -->
             </ol>
             <p id="pCantidadPersonas">Cantidad de personas: 2</p>
             
             <h4>Consulta de descripción</h4>
-            <label for="secuenciaConsultaDescripcion">Secuencia <input type="text" id="secuenciaConsultaDescripcion" placeholder="Secuencia"></label>
-            <input class="btn" type="button" id="btnConsultarDescripcion" value="Consultar">
-            
+            <form id="formSecuencia">
+              <label for="secuenciaConsultaDescripcion">Secuencia <input type="text" id="secuenciaConsultaDescripcion" placeholder="Secuencia"></label>
+              <input class="btn" type="button" id="btnConsultarDescripcion" value="Consultar">
+            </form>
             <h4>Generación de QR</h4>
-            <label for="SeleccionEmpresa">Seleccione la empresa<select id="SeleccionEmpresa">
-                <option>ANTEL</option>
-                <option>UTE</option>
-              </select></label>
+            <label for="SeleccionEmpresa">Seleccione la empresa<select id="SeleccionEmpresa"></select></label>
             <input class="btn" type="button" id="btnGenerarQR" value="Generar Código QR">
             
             <h3>QR</h3>

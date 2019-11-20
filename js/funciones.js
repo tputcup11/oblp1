@@ -24,6 +24,7 @@ function registrarCliente(){
     let cliente = new Cliente(nombre, telefono, correo, web);
     sistema.agregarCliente(cliente);
     actualizarHTML();
+    document.getElementById("formCliente").reset()
 }
 
 function registrarEmpleado(){
@@ -57,7 +58,7 @@ function asignarEmpleadoProyecto(){
     
     for (empl of sistema.obtenerEmpleados()){
         if (empl.nombre = nombreEmpleado){
-            let empleado = empleado
+            let empleado = empleado;
         }
     }
 
@@ -81,15 +82,41 @@ function generarQR(){
 }
 
 function actualizarHTML(){
-    //TO-DO Realizar la carga de listas/Combos/Tablas con la informacion actual del objeto sistema
-    let listaClientes = sistema.obtenerClientes()
-    let listaEmpleados = sistema.obtenerEmpleados()
-    let listaProyectos = sistema.obtenerProyectos()
+    //Se cargan todos las listas y elementos necesarios
+    let listaClientes = sistema.obtenerClientes();
+    let listaEmpleados = sistema.obtenerEmpleados();
+    let listaProyectos = sistema.obtenerProyectos();
+    let li_clientes = document.getElementById("liClientes");
+    let comb_clientes = document.getElementById("clienteRegistroProyecto");
+    let comb_clientes2 = document.getElementById("SeleccionEmpresa");
 
+    //Limpio los elementos antes de actualizarlos
+    li_clientes.innerHTML="";
+    comb_clientes.innerHTML="";
+    comb_clientes2.innerHTML="";
 
+    for (elemento of listaClientes){
 
-    // for (elemento of listaClientes){
-    //    alert(elemento.nombre + " " + elemento.telefono + " " + elemento.correo + " " + elemento.web);
-    //}
+        let nodoLI = document.createElement("LI");
+        nodoLI.innerHTML = elemento.nombre+" - "+"<a href='http://"+elemento.web+"' target='_blank'>"+elemento.web+"</a>";
+        li_clientes.appendChild(nodoLI);
+    }
+    
+	for (elemento of listaClientes){
 
-}   
+        let nodoComb = document.createElement("option");
+		let nodoTextoComb = document.createTextNode(elemento.nombre);
+        nodoComb.appendChild(nodoTextoComb);
+        comb_clientes.appendChild(nodoComb);
+
+    }
+
+    for (elemento of listaClientes){
+
+        let nodoComb = document.createElement("option");
+		let nodoTextoComb = document.createTextNode(elemento.nombre);
+        nodoComb.appendChild(nodoTextoComb);
+        comb_clientes2.appendChild(nodoComb);
+
+	}
+}
