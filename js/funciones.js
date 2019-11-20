@@ -36,6 +36,7 @@ function registrarEmpleado(){
     
     sistema.agregarEmpleado(empleado);
     actualizarHTML();
+    document.getElementById("formEmpleado").reset()
 }
 
 function registrarProyecto(){
@@ -89,12 +90,15 @@ function actualizarHTML(){
     let li_clientes = document.getElementById("liClientes");
     let comb_clientes = document.getElementById("clienteRegistroProyecto");
     let comb_clientes2 = document.getElementById("SeleccionEmpresa");
-
+    let comb_empleado = document.getElementById("liderRegistroProyecto");
+    let tabla_empleados = document.getElementById("tablaEmpleados");
     //Limpio los elementos antes de actualizarlos
     li_clientes.innerHTML="";
     comb_clientes.innerHTML="";
     comb_clientes2.innerHTML="";
-
+    comb_empleado.innerHTML="";
+    tabla_empleados.innerHTML="";
+    //Cargar Info Clientes
     for (elemento of listaClientes){
 
         let nodoLI = document.createElement("LI");
@@ -118,5 +122,48 @@ function actualizarHTML(){
         nodoComb.appendChild(nodoTextoComb);
         comb_clientes2.appendChild(nodoComb);
 
-	}
+    }
+    
+    //Cargar Info Empleados
+    let theaderfila = document.createElement("tr");
+    let theadercelda1 = document.createElement("td");
+    let theadercelda2 = document.createElement("td");
+    let theadercelda3 = document.createElement("td");
+    let theadercelda4 = document.createElement("td");
+    let theaderTexto1 = document.createTextNode("Nombre");
+    let theaderTexto2 = document.createTextNode("Salario");
+    let theaderTexto3 = document.createTextNode("Cantidad");
+    let theaderTexto4 = document.createTextNode("Estado");
+    theadercelda1.appendChild(theaderTexto1);
+    theadercelda2.appendChild(theaderTexto2);
+    theadercelda3.appendChild(theaderTexto3);
+    theadercelda4.appendChild(theaderTexto4);
+    theaderfila.appendChild(theadercelda1);
+    theaderfila.appendChild(theadercelda2);
+    theaderfila.appendChild(theadercelda3);
+    theaderfila.appendChild(theadercelda4);
+    tabla_empleados.appendChild(theaderfila);
+    
+    for (elemento of listaEmpleados){
+        
+        let nodoComb = document.createElement("option");
+		let nodoTextoComb = document.createTextNode(elemento.nombre);
+        nodoComb.appendChild(nodoTextoComb);
+        comb_empleado.appendChild(nodoComb);
+
+        let fila = document.createElement("tr");
+        let celda1 = document.createElement("td");
+        let celda2 = document.createElement("td");
+
+        let textocelda1 = document.createTextNode(elemento.nombre);
+        let textocelda2 = document.createTextNode(elemento.salario);
+
+        celda1.appendChild(textocelda1);
+        celda2.appendChild(textocelda2);
+
+        fila.appendChild(celda1);
+        fila.appendChild(celda2);
+        tabla_empleados.appendChild(fila);
+    }
+
 }
