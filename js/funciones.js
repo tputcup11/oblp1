@@ -13,6 +13,9 @@ function inicio(){
     //TO-DO No se bien como poner el radius button 
     document.getElementById("btnConsultarDescripcion").addEventListener('click', consultarDescripcion);
     document.getElementById("btnGenerarQR").addEventListener('click', generarQR);
+    document.getElementById("proyectoAsignacionProyecto").addEventListener('change', listarEmpleadosSinProyecto);
+    //document.getElementById("proyectoEliminarProyecto").addEventListener('change', listarEmpleadosConProyecto);
+
 }
 
 function registrarCliente(){
@@ -57,22 +60,43 @@ function asignarEmpleadoProyecto(){
     nombreProyecto = document.getElementById("proyectoAsignacionProyecto").value;
     nombreEmpleado = document.getElementById("empleadoAsignacionProyecto").value;
     
-    for (empl of sistema.obtenerEmpleados()){
-        if (empl.nombre = nombreEmpleado){
-            let empleado = empleado;
-        }
-    }
-
     for (proyecto of sistema.obtenerProyectos()){
-        if (proyecto.nombre = nombreProyecto){
-            proyecto.asignarEmpleado(empleado); 
+        if (proyecto.nombre == nombreProyecto){
+            proyecto.asignarEmpleado(nombreEmpleado); 
         }
     }
+    actualizarHTML();
 }
 
 function eliminarEmpleadoProyecto(){
     //TO-DO Buscar el objeto del empleado asignado en la lista 
 }
+
+function listarEmpleadosSinProyecto(){
+    let listaProyectos = sistema.obtenerProyectos();
+
+    let proyecto = document.getElementById("proyectoAsignacionProyecto").value;
+    let empleados = sistema.obtenerEmpleados()
+    let comb_emplSinProyecto = document.getElementById("empleadoAsignacionProyecto");
+    comb_emplSinProyecto.innerHTML="";
+    for (proy of listaProyectos){
+        if(proy.nombre == proyecto){
+
+            for (emp of empleados){
+
+                if(!(proy.empleadosAsignados.includes(emp.nombre)) && proy.lider != emp.nombre){
+                    
+                    let nodoComb = document.createElement("option");
+		            let nodoTextoComb = document.createTextNode(emp.nombre);
+                    nodoComb.appendChild(nodoTextoComb);
+                    comb_emplSinProyecto.appendChild(nodoComb); 
+                    
+                }
+            }
+        }
+    } 
+}
+
 
 function consultarDescripcion(){
 
@@ -87,17 +111,25 @@ function actualizarHTML(){
     let listaClientes = sistema.obtenerClientes();
     let listaEmpleados = sistema.obtenerEmpleados();
     let listaProyectos = sistema.obtenerProyectos();
+
     let li_clientes = document.getElementById("liClientes");
     let comb_clientes = document.getElementById("clienteRegistroProyecto");
     let comb_clientes2 = document.getElementById("SeleccionEmpresa");
     let comb_empleado = document.getElementById("liderRegistroProyecto");
     let tabla_empleados = document.getElementById("tablaEmpleados");
+    let comb_proyectos = document.getElementById("proyectoAsignacionProyecto");
+    let comb_proyectos2 = document.getElementById("proyectoEliminarProyecto");
+
     //Limpio los elementos antes de actualizarlos
     li_clientes.innerHTML="";
     comb_clientes.innerHTML="";
     comb_clientes2.innerHTML="";
     comb_empleado.innerHTML="";
     tabla_empleados.innerHTML="";
+    comb_proyectos.innerHTML="";
+    comb_proyectos2.innerHTML="";
+
+    
     //Cargar Info Clientes
     for (elemento of listaClientes){
 
@@ -166,4 +198,18 @@ function actualizarHTML(){
         tabla_empleados.appendChild(fila);
     }
 
+    //Cargar Info Proyectos
+    for (elemento of listaProyectos){
+        let nodoComb = document.createElement("option");
+		let nodoTextoComb = document.createTextNode(elemento.nombre);
+        nodoComb.appendChild(nodoTextoComb);
+        comb_proyectos.appendChild(nodoComb);
+    }
+    for (elemento of listaProyectos){
+        let nodoComb = document.createElement("option");
+		let nodoTextoComb = document.createTextNode(elemento.nombre);
+        nodoComb.appendChild(nodoTextoComb);
+        comb_proyectos2.appendChild(nodoComb);
+    }
+    listarEmpleadosSinProyecto();
 }

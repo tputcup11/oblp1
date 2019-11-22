@@ -34,6 +34,16 @@ class Proyecto{
     asignarEmpleado(empleado){
         this.empleadosAsignados.push(empleado);
     }
+
+    quitarEmpleado(empleado){
+        
+        for (let i = 0; i < this.empleadosAsignados.length; i++) {
+            if(this.empleadosAsignados[i] == empleado){
+                this.empleadosAsignados[i] = "";
+            }
+        } 
+    }
+    
 }
 
 class Sistema{
