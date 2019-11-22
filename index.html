@@ -38,21 +38,21 @@
             <a id="GestionClientesEmpleados"></a>
             <h3>Gestión de Clientes y Empleados</h3>
             <h4>Registro de Cliente</h4>
-            <form id="formCliente">
-              <label for="nombreCliente">Nombre <input type="text" id="nombreCliente" maxlength="20" placeholder="Nombre"></label>
-              <label for="telefonoCliente">Teléfono <input type="text" id="telefonoCliente" maxlength="20" placeholder="Teléfono"></label>
-              <label for="correoCliente">Correo <input type="text" id="correoCliente" placeholder="Correo"></label>
-              <label for="webCliente">Web <input type="text" id="webCliente" placeholder="Web"></label>
+            <form method="GET" id="formCliente">
+              <label for="nombreCliente">Nombre <input type="text" id="nombreCliente" maxlength="20" placeholder="Nombre" required></label>
+              <label for="telefonoCliente">Teléfono <input type="number" id="telefonoCliente" maxlength="9" placeholder="Teléfono" required></label>
+              <label for="correoCliente">Correo <input type="email" id="correoCliente" placeholder="Correo" required></label>
+              <label for="webCliente">Web <input type="text" id="webCliente" placeholder="Web" required></label>
               <input class="btn" type="button" id="btnRegistrarCliente" value="Registrar">
             </form>
             <h4>Clientes Registrados</h4>
             <ol id="liClientes"></ol>
       
             <h4>Registro de Empleado</h4>
-            <form id="formEmpleado">
-              <label for="nombreEmpleado">Nombre <input type="text" id="nombreEmpleado" maxlength="20" placeholder="Nombre"></label>
-              <label for="telefonoEmpleado">Teléfono <input type="text" id="telefonoEmpleado" maxlength="20" placeholder="Teléfono"></label>
-              <label for="salarioEmpleado">Salario <input type="text" id="salarioEmpleado" maxlength="20" placeholder="Salario"></label>
+            <form method="GET" id="formEmpleado">
+              <label for="nombreEmpleado">Nombre <input type="text" id="nombreEmpleado" maxlength="20" placeholder="Nombre" required></label>
+              <label for="telefonoEmpleado">Teléfono <input type="number" id="telefonoEmpleado" maxlength="9" placeholder="Teléfono" required></label>
+              <label for="salarioEmpleado">Salario <input type="number" id="salarioEmpleado" maxlength="20" placeholder="Salario" required></label>
               <input class="btn" type="button" id="btnRegistrarEmpleado" value="Registrar">
             </form>
             <br>
@@ -66,7 +66,7 @@
             <h3>Gestión de Proyectos y Asignaciones</h3>
       
             <h4>Registro de Proyecto</h4>
-            <form id="formProyecto">
+            <form method="GET" id="formProyecto">
               <label for="nombreRegistroProyecto"> Nombre <input type="text" id="nombreRegistroProyecto" maxlength="15" placeholder="Nombre"></label>
               <label for="descripcionRegistroProyecto"> Descripción <input type="text" id="descripcionRegistroProyecto" maxlength="35" placeholder="Descripción"></label>
               <label for="areaRegistroProyecto"> Área temática: <select id="areaRegistroProyecto">
@@ -81,13 +81,13 @@
               <input class="btn" type="button" id="btnRegistrarProyecto" value="Registrar"> 
             </form>
             <h4>Asignación de Empleados en Proyecto</h4>
-            <form id="formAsignarProyecto">
+            <form method="GET" id="formAsignarProyecto">
               <label for="proyectoAsignacionProyecto"> Proyecto: <select id="proyectoAsignacionProyecto"></select></label>
               <label for="empleadoAsignacionProyecto"> Empleado <select id="empleadoAsignacionProyecto"></select></label>
               <input class="btn" type="button" id="btnAsignarProyecto" value="Asignar">
             </form>  
             <h4>Eliminación de Empleados en Proyecto</h4>
-            <form id="formEliminarProyecto">
+            <form method="GET" id="formEliminarProyecto">
               <label for="proyectoEliminarProyecto"> Proyecto: <select id="proyectoEliminarProyecto"></select></label>
               <label for="empleadoEliminarProyecto"> Empleado: <select id="empleadoEliminarProyecto"></select></label>
               <input class="btn" type="button" id="btnEliminarProyecto" value="Eliminar">
@@ -114,7 +114,7 @@
             <p id="pCantidadPersonas">Cantidad de personas: 2</p>
             
             <h4>Consulta de descripción</h4>
-            <form id="formSecuencia">
+            <form method="GET" id="formSecuencia">
               <label for="secuenciaConsultaDescripcion">Secuencia <input type="text" id="secuenciaConsultaDescripcion" placeholder="Secuencia"></label>
               <input class="btn" type="button" id="btnConsultarDescripcion" value="Consultar">
             </form>

@@ -19,6 +19,7 @@ function inicio(){
 }
 
 function registrarCliente(){
+    if(document.getElementById("formCliente").reportValidity()){
     let nombre = document.getElementById("nombreCliente").value;
     let telefono = document.getElementById("telefonoCliente").value;
     let correo = document.getElementById("correoCliente").value;
@@ -28,6 +29,7 @@ function registrarCliente(){
     sistema.agregarCliente(cliente);
     actualizarHTML();
     document.getElementById("formCliente").reset()
+    }
 }
 
 function registrarEmpleado(){

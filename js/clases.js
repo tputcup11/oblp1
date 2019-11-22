@@ -75,4 +75,9 @@ class Sistema{
     agregarProyecto(proyecto){
         this.listaProyectos.push(proyecto);
     }
+
+    //Mostrar clientes ordenados por nombre
+    mostrarClientesOrdenNombre(){
+        return this.listaClientes.sort
+    }
 }
