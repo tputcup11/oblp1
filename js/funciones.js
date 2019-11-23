@@ -10,7 +10,7 @@ function inicio(){
     document.getElementById("btnRegistrarProyecto").addEventListener('click', registrarProyecto);
     document.getElementById("btnAsignarProyecto").addEventListener('click', asignarEmpleadoProyecto);
     document.getElementById("btnEliminarProyecto").addEventListener('click', eliminarEmpleadoProyecto);
-    //TO-DO No se bien como poner el radius button 
+    document.getElementById("min_checkbox").addEventListene('change', consultaPersonas);
     document.getElementById("btnConsultarDescripcion").addEventListener('click', consultarDescripcion);
     document.getElementById("btnGenerarQR").addEventListener('click', generarQR);
     document.getElementById("proyectoAsignacionProyecto").addEventListener('change', listarEmpleadosSinProyecto);
@@ -131,6 +131,28 @@ function listarEmpleadosConProyecto(){
             }
         }
     }
+}
+
+function consultaPersonas(){
+    let checkbox = document.getElementById("min_checkbox");
+    let li_maxMin = document.getElementById("olMaximoMinimo");
+    let listaProyectos = sistema.obtenerProyectos();
+
+    if(checkbox.checked){
+        //BUSCAR MINIMO Y PEGAR EN PARRAFO
+        //let contadorEmpleados = proy;
+       // for (proy of listaProyectos){
+            
+        //    if (proy.empleadosAsignados.length <= cotadorEmpleados){
+        //        contadorEmpleados = proy
+        //    }
+    
+    }else{
+        //BUSCAR MAXIMO Y PEGAR EN PARRAFO
+
+    }
+
+
 }
 
 function consultarDescripcion(){
