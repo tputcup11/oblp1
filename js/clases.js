@@ -57,7 +57,8 @@ class Sistema{
 
     //Getters
     obtenerClientes(){
-        return this.listaClientes.sort((a, b) => a.nombre.localeCompare(b.nombre));
+        return this.listaClientes
+  
     }
     obtenerEmpleados(){
         return this.listaEmpleados.sort((a, b) => b.salario - a.salario);

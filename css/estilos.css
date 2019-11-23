@@ -30,7 +30,7 @@ header{
 }
 #bannerinicio {
 	background-color: #075159;
-	width:35%;
+	width:39%;
 }
 .bannerf {
 	background-color: #075159;
@@ -124,7 +124,25 @@ ol {
     width: 100px;
     height: 100px;
 }
-  
+@media screen and (max-width:480px) {
+    .SeccionConFondo {
+     background-color: #CCD1CF;
+     line-height : 25px;
+    }
+    form {
+        line-height : 50px;
+    }
+  }
+@media screen and (max-width:650px) {
+
+    #bannerinicio {
+        background-color: #075159;
+        width:22%;
+    }
+    
+  }
+
+
 /* No mostrar menú en la impresión*/
 @media print{
     .no-imprimir, .no-imprimir *{
