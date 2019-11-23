@@ -194,7 +194,20 @@ function consultaPersonas(){
 }
 
 function consultarDescripcion(){
+    let secuencia = document.getElementById("secuenciaConsultaDescripcion").value
+    let listaProyectos = sistema.obtenerProyectos;
 
+    for (proy of listaProyectos){
+        let descripcion = proy.descripcion;
+        let j = 0;
+        for (let i = 0 ; i < secuencia.length ; i++){
+            if(secuencia.charAt(i) != "*"){
+
+                
+            }
+        }
+        }
+    }
 }
 
 function generarQR(){
