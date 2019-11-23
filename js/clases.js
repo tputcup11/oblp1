@@ -58,9 +58,7 @@ class Sistema{
     //Getters
     obtenerClientes(){
         return this.listaClientes
-        //.sort(function(a,b){
-         //   return a.nombre-b.nombre
-        //}
+  
     }
     obtenerEmpleados(){
         return this.listaEmpleados;

@@ -137,16 +137,17 @@ function consultarDescripcion(){
 
 }
 
-function generarQR(){
+//function generarQR(){
 
-   /* var miCodigoQR = new QRCode("codigoQR");
-    $(document).ready(function(){
-      $("#generarCodigo").on("click",function(){
-        var cadena = $("aca van los textos xdxxd").val();
-        
+   // var miCodigoQR = new QRCode("codigoQR");
+    //$(document).ready(function(){
+       // miEmpresa= document.getElementById("SeleccionEmpresa").value;
+      $("#btnGenerarQR").on("click",function(){
+        var cadena = $("ola").val();
+        miCodigoQR.makeCode(cadena);
       });
-    }); */
-}
+    //}); 
+//}
 
 function actualizarHTML(){
     //Se cargan todas las listas y elementos necesarios
@@ -186,7 +187,6 @@ function actualizarHTML(){
 		let nodoTextoComb = document.createTextNode(elemento.nombre);
         nodoComb.appendChild(nodoTextoComb);
         comb_clientes.appendChild(nodoComb);
-
     }
 
     for (elemento of listaClientes){
