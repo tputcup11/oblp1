@@ -54,6 +54,7 @@ function registrarProyecto(){
     let proyecto = new Proyecto(nombre, descripcion, areaTematica, cliente, lider);
 
     sistema.agregarProyecto(proyecto);
+    document.getElementById("formProyecto").reset();
     actualizarHTML();
 }
 
@@ -189,6 +190,7 @@ function actualizarHTML(){
     }
     
     //Cargar Info Empleados
+        //Header Tabla
     let theaderfila = document.createElement("tr");
     let theadercelda1 = document.createElement("td");
     let theadercelda2 = document.createElement("td");
@@ -207,26 +209,36 @@ function actualizarHTML(){
     theaderfila.appendChild(theadercelda3);
     theaderfila.appendChild(theadercelda4);
     tabla_empleados.appendChild(theaderfila);
-    
+
+        //Filas Tabla
     for (elemento of listaEmpleados){
-        
+
+        let contadorProyectos = 0;
         let nodoComb = document.createElement("option");
 		let nodoTextoComb = document.createTextNode(elemento.nombre);
         nodoComb.appendChild(nodoTextoComb);
         comb_empleado.appendChild(nodoComb);
 
+        for(proy of sistema.obtenerProyectos()){
+    
+            if(proy.empleadosAsignados.includes(elemento.nombre) || proy.lider === elemento.nombre){
+                contadorProyectos ++;
+            }
+        }
+
         let fila = document.createElement("tr");
         let celda1 = document.createElement("td");
         let celda2 = document.createElement("td");
-
+        let celda3 = document.createElement("td");
         let textocelda1 = document.createTextNode(elemento.nombre);
         let textocelda2 = document.createTextNode(elemento.salario);
-
+        let textocelda3 = document.createTextNode(contadorProyectos);
         celda1.appendChild(textocelda1);
         celda2.appendChild(textocelda2);
-
+        celda3.appendChild(textocelda3);
         fila.appendChild(celda1);
         fila.appendChild(celda2);
+        fila.appendChild(celda3);
         tabla_empleados.appendChild(fila);
     }
 
