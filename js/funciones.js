@@ -140,7 +140,7 @@ function generarQR(){
 }
 
 function actualizarHTML(){
-    //Se cargan todos las listas y elementos necesarios
+    //Se cargan todas las listas y elementos necesarios
     let listaClientes = sistema.obtenerClientes();
     let listaEmpleados = sistema.obtenerEmpleados();
     let listaProyectos = sistema.obtenerProyectos();
@@ -226,10 +226,19 @@ function actualizarHTML(){
             }
         }
 
-        let fila = document.createElement("tr");
-        let celda1 = document.createElement("td");
-        let celda2 = document.createElement("td");
-        let celda3 = document.createElement("td");
+        let fila = document.createElement("tr"); //Fila
+        let celda1 = document.createElement("td"); //Celda Nombre
+        celda1.setAttribute("class", "td-nombre");
+        let celda2 = document.createElement("td"); //Celda Salario
+        let celda3 = document.createElement("td"); //Celda Cantidad
+        let celda4 = document.createElement("td"); //Celda Imagen
+        if(contadorProyectos <= 3){
+            celda4.innerHTML = "<img src='img/semaforoverde.png' class='semaforo'>";
+        }else if(contadorProyectos == 4 || contadorProyectos == 5){
+            celda4.innerHTML = "<img src='img/semaforoamarillo.png' class='semaforo'>";
+        }else{
+            celda4.innerHTML = "<img src='img/semafororojo.png' class='semaforo'>";
+        }
         let textocelda1 = document.createTextNode(elemento.nombre);
         let textocelda2 = document.createTextNode(elemento.salario);
         let textocelda3 = document.createTextNode(contadorProyectos);
@@ -239,7 +248,9 @@ function actualizarHTML(){
         fila.appendChild(celda1);
         fila.appendChild(celda2);
         fila.appendChild(celda3);
+        fila.appendChild(celda4);
         tabla_empleados.appendChild(fila);
+
     }
 
     //Cargar Info Proyectos
