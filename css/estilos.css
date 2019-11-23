@@ -120,11 +120,15 @@ ol {
 .radio{
     height:auto;
 }
-
+#codigoQR{
+    width: 100px;
+    height: 100px;
+}
+  
 /* No mostrar menú en la impresión*/
 @media print{
     .no-imprimir, .no-imprimir *{
       display: none !important;
     }
   }
-/* Validación de campos requeridos*/
+

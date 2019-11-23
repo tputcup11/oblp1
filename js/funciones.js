@@ -33,6 +33,7 @@ function registrarCliente(){
 }
 
 function registrarEmpleado(){
+    if(document.getElementById("formEmpleado").reportValidity()){
     let nombre = document.getElementById("nombreEmpleado").value;
     let telefono = document.getElementById("telefonoEmpleado").value;
     let salario = document.getElementById("salarioEmpleado").value;
@@ -42,6 +43,7 @@ function registrarEmpleado(){
     sistema.agregarEmpleado(empleado);
     actualizarHTML();
     document.getElementById("formEmpleado").reset()
+    }
 }
 
 function registrarProyecto(){
@@ -137,6 +139,13 @@ function consultarDescripcion(){
 
 function generarQR(){
 
+   /* var miCodigoQR = new QRCode("codigoQR");
+    $(document).ready(function(){
+      $("#generarCodigo").on("click",function(){
+        var cadena = $("aca van los textos xdxxd").val();
+        
+      });
+    }); */
 }
 
 function actualizarHTML(){
@@ -188,6 +197,7 @@ function actualizarHTML(){
         comb_clientes2.appendChild(nodoComb);
 
     }
+
     
     //Cargar Info Empleados
         //Header Tabla

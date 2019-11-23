@@ -57,7 +57,10 @@ class Sistema{
 
     //Getters
     obtenerClientes(){
-        return this.listaClientes;
+        return this.listaClientes
+        //.sort(function(a,b){
+         //   return a.nombre-b.nombre
+        //}
     }
     obtenerEmpleados(){
         return this.listaEmpleados;
@@ -77,8 +80,21 @@ class Sistema{
         this.listaProyectos.push(proyecto);
     }
 
-    //Mostrar clientes ordenados por nombre
-    mostrarClientesOrdenNombre(){
-        return this.listaClientes.sort
+    //Ordenar clientes por nomrbe
+    ordenarClientes(){
+        this.listaClientes.sort(sistema.compararNombre);
     }
+    static compararNombre(a,b){
+         let retorno = 0;
+ 
+     if (a.nombre.toUpperCase() < b.nombre.toUpperCase()){
+         retorno = -1;
+     }
+     if (a.nombre.toUpperCase() > b.nombre.toUpperCase()){
+         retorno=1;
+     }
+ 
+         return retorno;
+ 
+ }
 }
