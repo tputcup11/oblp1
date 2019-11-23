@@ -14,21 +14,21 @@ function inicio(){
     document.getElementById("btnConsultarDescripcion").addEventListener('click', consultarDescripcion);
     document.getElementById("btnGenerarQR").addEventListener('click', generarQR);
     document.getElementById("proyectoAsignacionProyecto").addEventListener('change', listarEmpleadosSinProyecto);
-    //document.getElementById("proyectoEliminarProyecto").addEventListener('change', listarEmpleadosConProyecto);
+    document.getElementById("proyectoEliminarProyecto").addEventListener('change', listarEmpleadosConProyecto);
 
 }
 
 function registrarCliente(){
     if(document.getElementById("formCliente").reportValidity()){
-    let nombre = document.getElementById("nombreCliente").value;
-    let telefono = document.getElementById("telefonoCliente").value;
-    let correo = document.getElementById("correoCliente").value;
-    let web = document.getElementById("webCliente").value;
+        let nombre = document.getElementById("nombreCliente").value;
+        let telefono = document.getElementById("telefonoCliente").value;
+        let correo = document.getElementById("correoCliente").value;
+        let web = document.getElementById("webCliente").value;
 
-    let cliente = new Cliente(nombre, telefono, correo, web);
-    sistema.agregarCliente(cliente);
-    actualizarHTML();
-    document.getElementById("formCliente").reset()
+        let cliente = new Cliente(nombre, telefono, correo, web);
+        sistema.agregarCliente(cliente);
+        actualizarHTML();
+        document.getElementById("formCliente").reset()
     }
 }
 
@@ -58,7 +58,6 @@ function registrarProyecto(){
 }
 
 function asignarEmpleadoProyecto(){
-    //TO-DO Usando el nombre del empleado, buscar en la lista de empleados el objeto del mismo y agregarlo a la lista de empleados asignados del proyecto seleccionado
     nombreProyecto = document.getElementById("proyectoAsignacionProyecto").value;
     nombreEmpleado = document.getElementById("empleadoAsignacionProyecto").value;
     
@@ -71,17 +70,24 @@ function asignarEmpleadoProyecto(){
 }
 
 function eliminarEmpleadoProyecto(){
-    //TO-DO Buscar el objeto del empleado asignado en la lista 
+    nombreProyecto = document.getElementById("proyectoEliminarProyecto").value;
+    nombreEmpleado = document.getElementById("empleadoEliminarProyecto").value;
+    
+    for (proyecto of sistema.obtenerProyectos()){
+        if (proyecto.nombre == nombreProyecto){
+            proyecto.quitarEmpleado(nombreEmpleado);
+        }
+    }
+    actualizarHTML();
 }
 
 function listarEmpleadosSinProyecto(){
-    let listaProyectos = sistema.obtenerProyectos();
-
     let proyecto = document.getElementById("proyectoAsignacionProyecto").value;
     let empleados = sistema.obtenerEmpleados()
     let comb_emplSinProyecto = document.getElementById("empleadoAsignacionProyecto");
     comb_emplSinProyecto.innerHTML="";
-    for (proy of listaProyectos){
+
+    for (proy of sistema.obtenerProyectos()){
         if(proy.nombre == proyecto){
 
             for (emp of empleados){
@@ -92,13 +98,37 @@ function listarEmpleadosSinProyecto(){
 		            let nodoTextoComb = document.createTextNode(emp.nombre);
                     nodoComb.appendChild(nodoTextoComb);
                     comb_emplSinProyecto.appendChild(nodoComb); 
-                    
                 }
             }
         }
     } 
 }
 
+function listarEmpleadosConProyecto(){
+    let proyecto = document.getElementById("proyectoEliminarProyecto").value;
+
+    let empleados = sistema.obtenerEmpleados();
+
+    let comb_emplConProyecto = document.getElementById("empleadoEliminarProyecto");
+
+    comb_emplConProyecto.innerHTML ="";
+
+    for(proy of sistema.obtenerProyectos()){
+        if (proy.nombre == proyecto){
+
+            for (empl of empleados){
+
+                if( (empl.nombre != proy.lider) && proy.empleadosAsignados.includes(empl.nombre)){
+
+                    let nodoComb = document.createElement("option");
+                    let nodoTextoComb = document.createTextNode(empl.nombre);
+                    nodoComb.appendChild(nodoTextoComb);
+                    comb_emplConProyecto.appendChild(nodoComb); 
+                }
+            }
+        }
+    }
+}
 
 function consultarDescripcion(){
 
@@ -213,5 +243,7 @@ function actualizarHTML(){
         nodoComb.appendChild(nodoTextoComb);
         comb_proyectos2.appendChild(nodoComb);
     }
+
     listarEmpleadosSinProyecto();
+    listarEmpleadosConProyecto();
 }

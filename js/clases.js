@@ -36,12 +36,13 @@ class Proyecto{
     }
 
     quitarEmpleado(empleado){
-        
+        let lista = [];
         for (let i = 0; i < this.empleadosAsignados.length; i++) {
-            if(this.empleadosAsignados[i] == empleado){
-                this.empleadosAsignados[i] = "";
+            if(this.empleadosAsignados[i] != empleado){
+                lista.push(this.empleadosAsignados[i]);
             }
-        } 
+        }
+        this.empleadosAsignados = lista; 
     }
     
 }
