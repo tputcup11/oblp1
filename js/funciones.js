@@ -198,7 +198,6 @@ function actualizarHTML(){
 
     }
 
-    
     //Cargar Info Empleados
         //Header Tabla
     let theaderfila = document.createElement("tr");

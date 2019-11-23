@@ -61,7 +61,7 @@ class Sistema{
   
     }
     obtenerEmpleados(){
-        return this.listaEmpleados;
+        return this.listaEmpleados.sort((a, b) => b.salario - a.salario);
     }
     obtenerProyectos(){
         return this.listaProyectos;
@@ -77,22 +77,4 @@ class Sistema{
     agregarProyecto(proyecto){
         this.listaProyectos.push(proyecto);
     }
-
-    //Ordenar clientes por nomrbe
-    ordenarClientes(){
-        this.listaClientes.sort(sistema.compararNombre);
-    }
-    static compararNombre(a,b){
-         let retorno = 0;
- 
-     if (a.nombre.toUpperCase() < b.nombre.toUpperCase()){
-         retorno = -1;
-     }
-     if (a.nombre.toUpperCase() > b.nombre.toUpperCase()){
-         retorno=1;
-     }
- 
-         return retorno;
- 
- }
 }
