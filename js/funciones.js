@@ -10,7 +10,8 @@ function inicio(){
     document.getElementById("btnRegistrarProyecto").addEventListener('click', registrarProyecto);
     document.getElementById("btnAsignarProyecto").addEventListener('click', asignarEmpleadoProyecto);
     document.getElementById("btnEliminarProyecto").addEventListener('click', eliminarEmpleadoProyecto);
-    document.getElementById("min_checkbox").addEventListene('change', consultaPersonas);
+    document.getElementById("min_checkbox").addEventListener('change', consultaPersonas);
+    document.getElementById("max_checkbox").addEventListener('change', consultaPersonas);
     document.getElementById("btnConsultarDescripcion").addEventListener('click', consultarDescripcion);
     document.getElementById("btnGenerarQR").addEventListener('click', generarQR);
     document.getElementById("proyectoAsignacionProyecto").addEventListener('change', listarEmpleadosSinProyecto);
@@ -137,18 +138,55 @@ function consultaPersonas(){
     let checkbox = document.getElementById("min_checkbox");
     let li_maxMin = document.getElementById("olMaximoMinimo");
     let listaProyectos = sistema.obtenerProyectos();
-
+    let p_cantidadPersonas = document.getElementById("pCantidadPersonas");
+    li_maxMin.innerHTML = "";
     if(checkbox.checked){
         //BUSCAR MINIMO Y PEGAR EN PARRAFO
-        //let contadorEmpleados = proy;
-       // for (proy of listaProyectos){
-            
-        //    if (proy.empleadosAsignados.length <= cotadorEmpleados){
-        //        contadorEmpleados = proy
-        //    }
-    
+        let contadorEmpleados = 0;
+        for (proy of listaProyectos){
+
+            //1st loop
+            if (contadorEmpleados == 0){
+                contadorEmpleados = proy.empleadosAsignados.length + 1;
+            }
+
+            if ( (proy.empleadosAsignados.length + 1)  < contadorEmpleados){
+                li_maxMin.innerHTML = "";
+                contadorEmpleados = proy.empleadosAsignados.length + 1;
+                let nodoLI = document.createElement("LI");
+                nodoLI.innerHTML = "Proyecto: "+ proy.nombre +" Lider: "+proy.lider;
+                li_maxMin.appendChild(nodoLI);
+            }else if ( (proy.empleadosAsignados.length + 1) == contadorEmpleados ){
+                let nodoLI = document.createElement("LI");
+                nodoLI.innerHTML = "Proyecto: "+ proy.nombre +" Lider: "+proy.lider;
+                li_maxMin.appendChild(nodoLI);
+            }
+        }
+        p_cantidadPersonas.innerHTML = "Cantidad Personas: "+contadorEmpleados;
     }else{
         //BUSCAR MAXIMO Y PEGAR EN PARRAFO
+        li_maxMin.innerHTML = "";
+        let contadorEmpleados = 0;
+        for (proy of listaProyectos){
+
+            //1st loop
+            if (contadorEmpleados == 0){
+                contadorEmpleados = proy.empleadosAsignados.length + 1;
+            }
+
+            if ( (proy.empleadosAsignados.length + 1)  > contadorEmpleados){
+                li_maxMin.innerHTML = "";
+                contadorEmpleados = proy.empleadosAsignados.length + 1;
+                let nodoLI = document.createElement("LI");
+                nodoLI.innerHTML = "Proyecto: "+ proy.nombre +" Lider: "+proy.lider;
+                li_maxMin.appendChild(nodoLI);
+            }else if ( (proy.empleadosAsignados.length + 1) == contadorEmpleados ){
+                let nodoLI = document.createElement("LI");
+                nodoLI.innerHTML = "Proyecto: "+ proy.nombre +" Lider: "+proy.lider;
+                li_maxMin.appendChild(nodoLI);
+            }
+        }
+        p_cantidadPersonas.innerHTML = "Cantidad Personas: "+contadorEmpleados;
 
     }
 
@@ -159,17 +197,17 @@ function consultarDescripcion(){
 
 }
 
-//function generarQR(){
+function generarQR(){
 
    // var miCodigoQR = new QRCode("codigoQR");
     //$(document).ready(function(){
        // miEmpresa= document.getElementById("SeleccionEmpresa").value;
-      $("#btnGenerarQR").on("click",function(){
-        var cadena = $("ola").val();
-        miCodigoQR.makeCode(cadena);
-      });
+     // $("#btnGenerarQR").on("click",function(){
+       // var cadena = $("ola").val();
+        //miCodigoQR.makeCode(cadena);
+      //});
     //}); 
-//}
+}
 
 function actualizarHTML(){
     //Se cargan todas las listas y elementos necesarios
@@ -300,4 +338,5 @@ function actualizarHTML(){
 
     listarEmpleadosSinProyecto();
     listarEmpleadosConProyecto();
+    consultaPersonas();
 }
