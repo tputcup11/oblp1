@@ -7,6 +7,8 @@
     <title>Gestión de Proyectos</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="shortcut icon" href="img/icono.png"> <!-- Favicon -->
+    <script src="js/qrcode.js"></script>
+    <acript src="js/jquery.min.js"></acript>
     <script src="js/clases.js"></script>
     <script src="js/funciones.js"></script>
 </head>
@@ -74,7 +76,7 @@
                   <option> 2 - Machine learning</option>
                   <option> 3 - IoT</option>
                   <option> 4 - Data Analysis</option>
-                  <option> 1 - Otros</option>
+                  <option> 5 - Otros</option>
                 </select></label>
               <label for="clienteRegistroProyecto"> Cliente: <select id="clienteRegistroProyecto"></select></label>
               <label for="liderRegistroProyecto"> Líder: <select id="liderRegistroProyecto"></select></label>
@@ -121,17 +123,16 @@
             <ul id="listaConsultaDescripcion"></ul>
             <h4>Generación de QR</h4>
             <label for="SeleccionEmpresa">Seleccione la empresa<select id="SeleccionEmpresa"></select></label>
-            <input class="btn" type="button" id="btnGenerarQR" value="Generar Código QR">
-            
-            <h3>QR</h3>
-            <span id=codigoQR></span>
+            <input class="btn" type="button" id="btnGenerarQR" value="Generar Código QR">            
+            <div id="qrcode"></div>
+
             <h4>Información de Empleados</h4>
             <table id="tablaEmpleados" class="tabla-infoEmpleados">
                 <tr><td>Nombre</td><td>Salario</td><td>Cantidad</td><td>Estado</td></tr>
             </table>
             <br>
             <h4>Información de área temática más frecuente</h4>
-            <span id="tematicasFrecuentes">Temáticas 1 </span>
+            <span id="tematicasFrecuentes"></span>
             <br>
             <br>
         </article>    
