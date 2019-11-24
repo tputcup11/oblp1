@@ -195,19 +195,49 @@ function consultaPersonas(){
 
 function consultarDescripcion(){
     let secuencia = document.getElementById("secuenciaConsultaDescripcion").value
-    let listaProyectos = sistema.obtenerProyectos;
-
+    secuencia = secuencia.toUpperCase();
+    let listaProyectos = sistema.obtenerProyectos();
+    let li_consultaDescripcion = document.getElementById("listaConsultaDescripcion");
+    li_consultaDescripcion.innerHTML = ""
     for (proy of listaProyectos){
+
         let descripcion = proy.descripcion;
+        descripcion = descripcion.toUpperCase();
+        let i = 0;
         let j = 0;
-        for (let i = 0 ; i < secuencia.length ; i++){
+        let salir = false;
+        while ( i < secuencia.length && salir == false){
+
             if(secuencia.charAt(i) != "*"){
 
-                
+                if (descripcion.includes(secuencia.charAt(i))){
+
+                    j = descripcion.indexOf(secuencia.charAt(i));
+                    while ( (j < descripcion.length) && (i < secuencia.length) && (salir == false)){
+                        
+                        if(secuencia.charAt(i) != "*"){
+                            if(descripcion.charAt(j) != secuencia.charAt(i)){
+                                salir = true;
+                            }
+                        }
+                        i++;
+                        j++;
+                    }
+                    if(!salir){
+                        let nodoLi = document.createElement("li");
+                        let textonodoLi = document.createTextNode(proy.nombre+" - "+proy.descripcion)
+                        nodoLi.appendChild(textonodoLi);
+                        li_consultaDescripcion.appendChild(nodoLi);
+                        salir = true;
+                    }      
+                }else{
+                    salir = true;
+                }
             }
-        }
+            i++;
         }
     }
+    document.getElementById("formSecuencia").reset();
 }
 
 function generarQR(){
