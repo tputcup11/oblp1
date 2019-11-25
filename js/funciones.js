@@ -79,7 +79,7 @@ function registrarEmpleado(){
 }
 
 function registrarProyecto(){
-    let listaProyectos = sistema.obtenerProyectos;
+    let listaProyectos = sistema.obtenerProyectos();
     let nombreUnico = true;
     let nombre = document.getElementById("nombreRegistroProyecto").value;
     let descripcion = document.getElementById("descripcionRegistroProyecto").value;
