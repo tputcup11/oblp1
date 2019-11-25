@@ -1,10 +1,7 @@
+// Obligatorio 1 realizado por: Sofía Otero (238824) y Manuel Garrido (251152).
 window.addEventListener('load',inicio);
 //Inicializar objeto sistema
 var sistema = new Sistema()
-//var qrcode = new QRCode(document.getElementById("qrcode"), {
- //   width : 100,
- //   height : 100
-//});
 
 function inicio(){
 
@@ -24,45 +21,91 @@ function inicio(){
 }
 
 function registrarCliente(){
-    if(document.getElementById("formCliente").reportValidity()){
-        let nombre = document.getElementById("nombreCliente").value;
-        let telefono = document.getElementById("telefonoCliente").value;
-        let correo = document.getElementById("correoCliente").value;
-        let web = document.getElementById("webCliente").value;
+    let nombreUnico = true;
+    let listaClientes = sistema.obtenerClientes();
+    let nombre = document.getElementById("nombreCliente").value;
+    let telefono = document.getElementById("telefonoCliente").value;
+    let correo = document.getElementById("correoCliente").value;
+    let web = document.getElementById("webCliente").value;
 
-        let cliente = new Cliente(nombre, telefono, correo, web);
-        sistema.agregarCliente(cliente);
-        actualizarHTML();
-        document.getElementById("formCliente").reset()
+    //Verificacion de nombre unico
+    for (cliente of listaClientes){
+        if(cliente.nombre == nombre){
+            nombreUnico = false;
+        }
+    }
+    //Ingresar Cliente
+    if(document.getElementById("formCliente").reportValidity()){
+        if(nombreUnico){
+            let cliente = new Cliente(nombre, telefono, correo, web);
+            sistema.agregarCliente(cliente);
+            actualizarHTML();
+            document.getElementById("formCliente").reset()
+        }else{
+            alert("Ya existe un cliente con el nombre: "+nombre);
+        }   
     }
 }
 
 function registrarEmpleado(){
-    if(document.getElementById("formEmpleado").reportValidity()){
+    let nombreUnico = true;
+    let listaEmpleados = sistema.obtenerEmpleados();
     let nombre = document.getElementById("nombreEmpleado").value;
     let telefono = document.getElementById("telefonoEmpleado").value;
     let salario = document.getElementById("salarioEmpleado").value;
 
-    let empleado = new Empleado(nombre, telefono, salario);
-    
-    sistema.agregarEmpleado(empleado);
-    actualizarHTML();
-    document.getElementById("formEmpleado").reset()
+    //Verificacion de nombre unico
+    for(empleado of listaEmpleados){
+        if(empleado.nombre == nombre){
+            nombreUnico = false;
+        }
+    }
+    //Ingresar Empleado
+    if(document.getElementById("formEmpleado").reportValidity()){
+        if(salario > 0 && nombreUnico){
+            let empleado = new Empleado(nombre, telefono, salario);
+        
+            sistema.agregarEmpleado(empleado);
+            actualizarHTML();
+            document.getElementById("formEmpleado").reset()
+        }else{
+            if(salario > 0 ){
+                alert("Ya existe un empleado con el nombre: "+nombre);
+            }else{
+                alert("El salario no puede ser menor a 0");
+            }
+        }
     }
 }
 
 function registrarProyecto(){
+    let listaProyectos = sistema.obtenerProyectos;
+    let nombreUnico = true;
     let nombre = document.getElementById("nombreRegistroProyecto").value;
     let descripcion = document.getElementById("descripcionRegistroProyecto").value;
     let areaTematica = document.getElementById("areaRegistroProyecto").value;
     let cliente = document.getElementById("clienteRegistroProyecto").value;
     let lider = document.getElementById("liderRegistroProyecto").value;
 
-    let proyecto = new Proyecto(nombre, descripcion, areaTematica, cliente, lider);
+    //Verificacion de nombre unico
+    for(proyecto of listaProyectos){
+        if(proyecto.nombre == nombre){
+            nombreUnico = false;
+        }
+    }
 
-    sistema.agregarProyecto(proyecto);
-    document.getElementById("formProyecto").reset();
-    actualizarHTML();
+    //Ingresar Proyecto
+    if(document.getElementById("formProyecto").reportValidity()){
+        if(nombreUnico){
+            let proyecto = new Proyecto(nombre, descripcion, areaTematica, cliente, lider);
+
+            sistema.agregarProyecto(proyecto);
+            actualizarHTML();
+            document.getElementById("formProyecto").reset();
+        }else{
+            alert("Ya Existe un Proyecto con el nombre: "+ nombre);
+        }
+    }
 }
 
 function asignarEmpleadoProyecto(){
@@ -145,11 +188,11 @@ function consultaPersonas(){
     let p_cantidadPersonas = document.getElementById("pCantidadPersonas");
     li_maxMin.innerHTML = "";
     if(checkbox.checked){
-        //BUSCAR MINIMO Y PEGAR EN PARRAFO
+        //Buscar Minimo
         let contadorEmpleados = 0;
         for (proy of listaProyectos){
 
-            //1st loop
+            //Seteo inicial
             if (contadorEmpleados == 0){
                 contadorEmpleados = proy.empleadosAsignados.length + 1;
             }
@@ -168,12 +211,12 @@ function consultaPersonas(){
         }
         p_cantidadPersonas.innerHTML = "Cantidad Personas: "+contadorEmpleados;
     }else{
-        //BUSCAR MAXIMO Y PEGAR EN PARRAFO
+        //Buscar Maximo
         li_maxMin.innerHTML = "";
         let contadorEmpleados = 0;
         for (proy of listaProyectos){
 
-            //1st loop
+            //Seteo inicial
             if (contadorEmpleados == 0){
                 contadorEmpleados = proy.empleadosAsignados.length + 1;
             }
@@ -191,10 +234,7 @@ function consultaPersonas(){
             }
         }
         p_cantidadPersonas.innerHTML = "Cantidad Personas: "+contadorEmpleados;
-
     }
-
-
 }
 
 function consultarDescripcion(){
@@ -261,7 +301,7 @@ function generarQR(){
             height : 100
         });
     }else{
-        alert("No hay empresa seleccionada");
+        alert("No se ha seleccionado una empresa");
     }
 }
 
@@ -270,7 +310,6 @@ function actualizarHTML(){
     let listaClientes = sistema.obtenerClientes();
     let listaEmpleados = sistema.obtenerEmpleados();
     let listaProyectos = sistema.obtenerProyectos();
-
     let li_clientes = document.getElementById("liClientes");
     let comb_clientes = document.getElementById("clienteRegistroProyecto");
     let comb_clientes2 = document.getElementById("SeleccionEmpresa");
@@ -279,7 +318,7 @@ function actualizarHTML(){
     let comb_proyectos = document.getElementById("proyectoAsignacionProyecto");
     let comb_proyectos2 = document.getElementById("proyectoEliminarProyecto");
 
-    //Limpio los elementos antes de actualizarlos
+    //Se limpian los elementos antes de actualizarlos
     li_clientes.innerHTML="";
     comb_clientes.innerHTML="";
     comb_clientes2.innerHTML="";
@@ -288,30 +327,23 @@ function actualizarHTML(){
     comb_proyectos.innerHTML="";
     comb_proyectos2.innerHTML="";
 
-    
     //Cargar Info Clientes
     for (elemento of listaClientes){
-
         let nodoLI = document.createElement("LI");
         nodoLI.innerHTML = elemento.nombre+" - "+"<a href='http://"+elemento.web+"' target='_blank'>"+elemento.web+"</a>";
         li_clientes.appendChild(nodoLI);
     }
-    
 	for (elemento of listaClientes){
-
         let nodoComb = document.createElement("option");
 		let nodoTextoComb = document.createTextNode(elemento.nombre);
         nodoComb.appendChild(nodoTextoComb);
         comb_clientes.appendChild(nodoComb);
     }
-
     for (elemento of listaClientes){
-
         let nodoComb = document.createElement("option");
 		let nodoTextoComb = document.createTextNode(elemento.nombre);
         nodoComb.appendChild(nodoTextoComb);
         comb_clientes2.appendChild(nodoComb);
-
     }
 
     //Cargar Info Empleados
@@ -375,7 +407,6 @@ function actualizarHTML(){
         fila.appendChild(celda3);
         fila.appendChild(celda4);
         tabla_empleados.appendChild(fila);
-
     }
 
     //Cargar Info Proyectos
@@ -391,7 +422,8 @@ function actualizarHTML(){
         nodoComb.appendChild(nodoTextoComb);
         comb_proyectos2.appendChild(nodoComb);
     }
-//Encontrar área temática más frecuente.
+
+    //Encontrar área temática más frecuente.
     let cont = [0,0,0,0,0];
     let areasfrecuentes = document.getElementById("tematicasFrecuentes");
     areasfrecuentes.innerHTML = ""
@@ -427,7 +459,7 @@ function actualizarHTML(){
         if (cont[4] != 0 && cont[4] >= cont[0] && cont[4] >= cont[1] && cont[4] >= cont[2] && cont[4] >= cont[3]){
             areasfrecuentes.innerHTML = areasfrecuentes.innerHTML+" 5 - Otros: "+cont[4]+"; ";
         }
-        
+    //Actualizaciones de combos mediante funciones
     listarEmpleadosSinProyecto();
     listarEmpleadosConProyecto();
     consultaPersonas();

@@ -1,3 +1,4 @@
+//Obligatorio 1 realizado por: Sofía Otero (238824) y Manuel Garrido (251152).
 class Cliente{
 
     constructor(nombre, telefono, correo, web){

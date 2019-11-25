@@ -41,7 +41,7 @@
             <h4>Registro de Cliente</h4>
             <form method="GET" id="formCliente">
               <label for="nombreCliente">Nombre <input type="text" id="nombreCliente" maxlength="20" placeholder="Nombre" required></label>
-              <label for="telefonoCliente">Teléfono <input type="number" id="telefonoCliente" maxlength="9" placeholder="Teléfono" required></label>
+              <label for="telefonoCliente">Teléfono <input type="number" id="telefonoCliente" placeholder="Teléfono" required></label>
               <label for="correoCliente">Correo <input type="email" id="correoCliente" placeholder="Correo" required></label>
               <label for="webCliente">Web <input type="text" id="webCliente" placeholder="Web" required></label>
               <input class="btn" type="button" id="btnRegistrarCliente" value="Registrar">
@@ -52,7 +52,7 @@
             <h4>Registro de Empleado</h4>
             <form method="GET" id="formEmpleado">
               <label for="nombreEmpleado">Nombre <input type="text" id="nombreEmpleado" maxlength="20" placeholder="Nombre" required></label>
-              <label for="telefonoEmpleado">Teléfono <input type="number" id="telefonoEmpleado" maxlength="9" placeholder="Teléfono" required></label>
+              <label for="telefonoEmpleado">Teléfono <input type="number" id="telefonoEmpleado" placeholder="Teléfono" required></label>
               <label for="salarioEmpleado">Salario <input type="number" id="salarioEmpleado" maxlength="20" placeholder="Salario" required></label>
               <input class="btn" type="button" id="btnRegistrarEmpleado" value="Registrar">
             </form>
@@ -68,8 +68,8 @@
       
             <h4>Registro de Proyecto</h4>
             <form method="GET" id="formProyecto">
-              <label for="nombreRegistroProyecto"> Nombre <input type="text" id="nombreRegistroProyecto" maxlength="15" placeholder="Nombre"></label>
-              <label for="descripcionRegistroProyecto"> Descripción <input type="text" id="descripcionRegistroProyecto" maxlength="35" placeholder="Descripción"></label>
+              <label for="nombreRegistroProyecto"> Nombre <input type="text" id="nombreRegistroProyecto" maxlength="15" placeholder="Nombre" required></label>
+              <label for="descripcionRegistroProyecto"> Descripción <input type="text" id="descripcionRegistroProyecto" maxlength="35" placeholder="Descripción" required></label>
               <label for="areaRegistroProyecto"> Área temática: <select id="areaRegistroProyecto">
                   <option> 1 - Big Data</option>
                   <option> 2 - Machine learning</option>
@@ -109,9 +109,7 @@
               Máximo
               <input class="radio" type="radio" name="maxmin" value="maximoPersona" id="max_checkbox" checked>
              </form>
-            <ol id="olMaximoMinimo">
-                <!-- <li class="li-verde" id="li-verde-padding">Remodelación - Lider Florencia Corrado</li> -->
-            </ol>
+            <ol id="olMaximoMinimo"></ol>
             <p id="pCantidadPersonas"></p>
             
             <h4>Consulta de descripción</h4>
@@ -138,10 +136,10 @@
     </section>
 
     <footer>
-        <p>Obligatorio de Programación 1 - Realizado por Sofía Otero (238824) y Manuel Garrido (251152)</p>
-            <a href="https://facebook.com" target="_blank"><img class="Icono" src="img/facebook.png" alt="Facebook"></a>
-            <a href="https://twitter.com" target="_blank"><img class="Icono" src="img/twitter.png" alt="Twitter"></a>
-            <a href="https://linkedin.com" target="_blank"><img class="Icono" src="img/linkedin.png" alt="Linkedin"></a>
+      <p>Obligatorio de Programación 1 - Realizado por Sofía Otero (238824) y Manuel Garrido (251152)</p>
+      <a href="https://facebook.com" target="_blank"><img class="Icono" src="img/facebook.png" alt="Facebook"></a>
+      <a href="https://twitter.com" target="_blank"><img class="Icono" src="img/twitter.png" alt="Twitter"></a>
+      <a href="https://linkedin.com" target="_blank"><img class="Icono" src="img/linkedin.png" alt="Linkedin"></a>
     </footer>
 </body>
 </html>
