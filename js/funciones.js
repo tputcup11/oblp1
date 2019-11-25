@@ -1,10 +1,10 @@
 window.addEventListener('load',inicio);
 //Inicializar objeto sistema
 var sistema = new Sistema()
-var qrcode = new QRCode(document.getElementById("qrcode"), {
-    width : 100,
-    height : 100
-});
+//var qrcode = new QRCode(document.getElementById("qrcode"), {
+ //   width : 100,
+ //   height : 100
+//});
 
 function inicio(){
 
@@ -394,28 +394,40 @@ function actualizarHTML(){
 //Encontrar área temática más frecuente.
     let cont = [0,0,0,0,0];
     let areasfrecuentes = document.getElementById("tematicasFrecuentes");
+    areasfrecuentes.innerHTML = ""
     for (elemento of listaProyectos){
         if(elemento.areaTematica == "1 - Big Data"){
-            cont[1] = cont[1]+1;
+            cont[0] = cont[0]+1;
         }
         if(elemento.areaTematica == "2 - Machine learning"){
-            cont[2] = cont[2]+1;
+            cont[1] = cont[1]+1;
         }
         if (elemento.areaTematica == "3 - IoT"){
-            cont[3] = cont[3]+1;
+            cont[2] = cont[2]+1;
         }
         if (elemento.areaTematica == "4 - Data Analysis"){
-            cont[4] = cont[4]+1;
+            cont[3] = cont[3]+1;
         }
         if (elemento.areaTematica == "5 - Otros"){
-            cont[5] = cont[5]+1;
+            cont[4] = cont[4]+1;
         }
     }
-
-    if(cont[1] == cont[2] == cont[3] == cont[4] == cont[5]){
-        areasfrecuentes.innerHTML = "1 - Big Data : "+contOrd[1]+" 2 - Machine learning: "+contOrd[2]+"3 - IoT: "+contOrd[3]+"4 - Data Analysis: "+contOrd[4]+"5 - Otros: "
-    }
- 
+        if (cont[0] != 0 && cont[0] >= cont[1] && cont[0] >= cont[2] && cont[0] >= cont[3] && cont[0] >= cont[4]){
+            areasfrecuentes.innerHTML = "1 - Big Data : "+cont[0]+"; ";
+        }
+        if (cont[1] != 0 && cont[1] >= cont[0] && cont[1] >= cont[2] && cont[1] >= cont[3] && cont[1] >= cont[4]){
+            areasfrecuentes.innerHTML = areasfrecuentes.innerHTML+" 2 - Machine learning: "+cont[1]+"; ";
+        }
+        if (cont[2] != 0 && cont[2] >= cont[0] && cont[2] >= cont[1] && cont[2] >= cont[3] && cont[2] >= cont[4]){
+            areasfrecuentes.innerHTML = areasfrecuentes.innerHTML+" 3 - IoT"+cont[2]+"; ";
+        }
+        if (cont[3] != 0 && cont[3] >= cont[0] && cont[3] >= cont[1] && cont[3] >= cont[2] && cont[3] >= cont[4]){
+            areasfrecuentes.innerHTML = areasfrecuentes.innerHTML+" 4 - Data Analysis: "+cont[3]+"; ";
+        }
+        if (cont[4] != 0 && cont[4] >= cont[0] && cont[4] >= cont[1] && cont[4] >= cont[2] && cont[4] >= cont[3]){
+            areasfrecuentes.innerHTML = areasfrecuentes.innerHTML+" 5 - Otros: "+cont[4]+"; ";
+        }
+        
     listarEmpleadosSinProyecto();
     listarEmpleadosConProyecto();
     consultaPersonas();
